@@ -1,0 +1,1294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<title>Lite Strategy, Inc. (Nasdaq: LITS) | Investor Relations Concept</title>
+<meta name="description" content="An independent design concept for the Lite Strategy (Nasdaq: LITS) investor relations page. Not affiliated with Lite Strategy, Inc.; the official IR site is https://investor.litestrategy.com/.">
+<link rel="icon" href="img/litestrategy-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&amp;family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
+<style>
+/* mc:tokens */
+:root{
+  /* palette.mjs --brand "#3858e9,#17163e" --strategy committed  (committed); navy set to the real #17163e (hue 280)
+     accent   #3858e9 oklch(0.531 0.221 268)   real: site CSS variables and links
+     deep     #17163e oklch(0.228 0.074 279.9) real: favicon field and site ink
+     sky      #88cbf5 oklch(0.813 0.090 237)   real: the logo's own gradient stop; the vessel's liquid, fills only
+     not used: the site's lime heading-gradient end #d0ff49 (recorded in IMAGERY.md)
+     measured: white on --accent 5.6:1, white on --accent-ink 7.7:1, --text-mid on --tint 5.7:1 */
+  --H: 268; --Hn: 268; --Hd: 280;
+  --accent:        oklch(0.531 0.221 268);
+  --accent-lo:     oklch(0.531 0.221 268 / 0.14);
+  --accent-lt:     oklch(0.86 0.068 268); /* bright accent ON dark surfaces */
+  --accent-ink:    oklch(0.46 0.221 268); /* TEXT, links, primary-button background */
+  --accent-ink-d:  oklch(0.40 0.203 268); /* hover */
+  --sky:           oklch(0.813 0.090 237);
+  --sky-lt:        oklch(0.90 0.045 237);
+  --ink:           oklch(0.26 0.028 268);
+  --deep:          oklch(0.228 0.074 279.9);
+  --deep-2:        oklch(0.165 0.058 279.9);
+  --paper:         oklch(0.99 0.004 268);
+  --card:          oklch(0.996 0.001 268);
+  --tint:          oklch(0.965 0.016 268);
+  --tint-2:        oklch(0.91 0.035 268);
+  --text:          oklch(0.31 0.028 268);
+  --text-mid:      oklch(0.49 0.028 268);
+  --line:          oklch(0.30 0.010 268 / 0.13);
+  --line-d:        oklch(0.98 0.009 268 / 0.16);
+  /* surface-slot defaults (foundation surface block); retuned in surface.css */
+  --sheet-edge:    oklch(0.40 0.203 268 / 0.26);
+  --blind:         oklch(1.00 0.000 0 / 0.5);
+  --blind-k:       oklch(1.00 0.000 0 / 0.85);
+  --sheet-neg:     oklch(0.98 0.009 268 / 0.06);
+  --serif:         'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --sans:          'IBM Plex Sans', system-ui, sans-serif;
+  --mono:          'IBM Plex Mono', ui-monospace, monospace;
+  --wrap: 1100px; --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* mc:substrate 9576b9be1505 */
+/* mediaconsole substrate: inlined by scripts/scaffold.mjs, identical on every page. Never edit or retype it;
+   override in page/layer.css or page/surface.css (both load after it). Band: all. Hue-parametric: colours are
+   tokens or oklch(... var(--Hn)). Integrity: opaque nav, content visible without JS, print and forced-colors safe. */
+:where(:root){--wrap:1140px;--ease:cubic-bezier(0.22, 1, 0.36, 1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:88px}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none} img,svg{display:block;max-width:100%} button{font:inherit;cursor:pointer}
+::selection{background:var(--accent-lt);color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px;border-radius:2px}
+.sec-dark :focus-visible,.snapshot :focus-visible,footer :focus-visible{outline-color:var(--accent-lt)}
+.wrap{width:min(var(--wrap),100% - 44px);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:200;background:var(--deep);color:#fff;padding:10px 16px;border-radius:6px;font-size:.85rem;transition:top .2s var(--ease)}
+.skip-link:focus{top:12px}
+.concept-note{background:var(--tint);color:var(--accent-ink-d);font-size:.78rem;text-align:center;padding:8px 16px;position:relative;z-index:101}
+.concept-note a{color:inherit;font-weight:600;text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--ink)}
+h1{font-size:clamp(2.35rem,5.3vw,4rem)} h2{font-size:clamp(1.7rem,3.4vw,2.5rem)} h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+p{max-width:68ch}
+.eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);display:inline-flex;align-items:center;gap:9px;margin-bottom:16px}
+.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.lead{font-size:clamp(1.08rem,1.7vw,1.3rem);line-height:1.55;color:var(--text-mid)}
+/* four house buttons: primary + ghost on light stock, primary-light + ghost-light on dark stock.
+   Text on dark uses --accent-lt, never --accent (D16: --accent may be a mid-L real brand colour; it is a fill). */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:11px 22px;border-radius:8px;font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.02em;border:1.5px solid transparent;background:transparent;transition:background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease)}
+.btn:hover{transform:translateY(-1px)} .btn .arw{font-family:var(--mono);transition:transform .2s var(--ease)} .btn:hover .arw{transform:translateX(3px)}
+.btn-primary{background:var(--accent-ink);color:#fff} .btn-primary:hover{background:var(--accent-ink-d)}
+.btn-ghost{border-color:var(--tint-2);color:var(--accent-ink)} .btn-ghost:hover{background:var(--tint);border-color:var(--accent-ink)}
+.btn-primary-light{background:var(--accent-lt);color:var(--deep)} .btn-primary-light:hover{background:var(--tint)}
+.btn-ghost-light{border-color:oklch(0.98 0.01 var(--Hn)/.4);color:#fff} .btn-ghost-light:hover{background:oklch(0.98 0.01 var(--Hn)/.1)}
+/* nav: opaque by rule (no translucency, no blur); markup is emitted by scaffold.mjs from page.json */
+.site-nav{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease)}
+.site-nav.scrolled{box-shadow:0 6px 24px oklch(0.3 0.02 var(--Hn)/.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.nav-brand{display:flex;align-items:center;gap:12px;min-height:44px;min-width:0}
+.nav-logo{display:flex;align-items:center;flex:none}
+.nav-logo img{height:26px;width:auto}
+.nav-name{font-family:var(--serif);font-size:1.2rem;line-height:1.1;color:var(--ink)}
+.nav-tick{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--text-mid);border:1px solid var(--line);border-radius:5px;padding:4px 8px}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a:not(.btn){font-size:.86rem;font-weight:500;color:var(--text-mid);transition:color .2s var(--ease)}
+.nav-links a:not(.btn):hover{color:var(--accent-ink)}
+.nav-links a.active{color:var(--ink);text-decoration:underline;text-underline-offset:7px;text-decoration-color:var(--accent);text-decoration-thickness:2px}
+.nav-burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none}
+.nav-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s var(--ease),opacity .2s}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* bands: FLAT FILLS, the floor only; page/surface.css must override them (verify FAILs flat pages) */
+main{display:block;overflow-x:clip}   /* a translated reveal or wide motif can never widen the page */
+main>section{padding:clamp(56px,8vw,104px) 0}
+.sec-white{background:var(--paper)} .sec-tint{background:var(--tint)}
+.sec-dark{background:var(--deep);color:oklch(0.9 0.008 var(--Hn))}
+.sec-dark h1,.sec-dark h2,.sec-dark h3{color:#fff} .sec-dark .eyebrow{color:var(--accent-lt)} .sec-dark .eyebrow::before{background:var(--accent)}
+.sec-dark .lead{color:oklch(0.86 0.01 var(--Hn))}
+.sec-head{max-width:660px;margin-bottom:clamp(36px,5vw,56px)} .sec-head p{margin-top:14px}
+/* data sits on its own plate: table.fin cells are transparent, never paint a band behind figures */
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table.fin{width:100%;border-collapse:collapse;min-width:540px;font-size:.92rem}
+table.fin caption{text-align:left;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-mid);padding:14px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+table.fin th,table.fin td{text-align:left;padding:14px 20px;border-bottom:1px solid var(--line)}
+table.fin tbody tr:last-child td{border-bottom:none}
+table.fin td.num{font-family:var(--mono);text-align:right;color:var(--ink);font-weight:500}
+table.fin thead th{font-weight:700;color:var(--ink);background:var(--card)}
+footer{background:var(--deep);color:oklch(0.76 0.008 var(--Hn));padding:56px 0 28px}
+.fls{padding:32px 0 0;font-size:.78rem;line-height:1.7;color:oklch(0.68 0.008 var(--Hn));max-width:98ch} .fls b{color:oklch(0.85 0.01 var(--Hn))}
+.fls a{color:inherit;text-decoration:underline} .fls+.fls{padding-top:14px}
+.market-note{padding-top:18px;margin-top:18px;border-top:1px solid var(--line-d);font-size:.72rem;line-height:1.7;color:oklch(0.68 0.008 var(--Hn))}
+/* reveal: hidden only once motion.js has set html.js, so no-JS and JS failure show everything.
+   Direction variants set --reveal-from (components/motion-extra.css); stagger with style="--d:.08s". */
+.reveal{transition:opacity .65s var(--ease),transform .65s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal:not(.in){opacity:0;transform:var(--reveal-from,translateY(20px))}
+/* motif pause: motion.js toggles .paused on #hero-motif off-screen, in a hidden tab, or via [data-motif-toggle] */
+.paused,.paused::before,.paused::after,.paused *,.paused *::before,.paused *::after{animation-play-state:paused!important}
+@media (max-width:900px){
+  .nav-burger{display:flex}
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:2px;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 22px 20px;opacity:0;transform:translateY(-10px);visibility:hidden;pointer-events:none;transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s;box-shadow:0 16px 30px oklch(0.3 0.02 var(--Hn)/.08)}
+  .nav-links.open{opacity:1;transform:none;visibility:visible;pointer-events:auto}
+  .nav-links li{width:100%} .nav-links a:not(.btn){display:block;padding:12px 0} .nav-links .btn{margin-top:10px;display:inline-flex}
+}
+@media (max-width:768px){ .footer-links a,.contact-col a{min-height:44px;display:flex;align-items:center} }   /* 44px tap targets; (0,1,1) so layer.css can restyle */
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .reveal{transition:none} .js .reveal:not(.in){opacity:1;transform:none}
+  .btn:hover{transform:none} [class*="motif"]{animation:none!important} [data-motif-toggle]{display:none}
+}
+/* print (D12): decoration off, every reveal shown, dark bands re-inked dark-on-white (backgrounds may not print).
+   A custom dark band must carry .sec-dark so this, its focus ring and its heading colour all apply. */
+@media print{
+  *,*::before,*::after{background-image:none!important;box-shadow:none!important;text-shadow:none!important;animation:none!important;transition:none!important}
+  .site-nav{position:static} .nav-burger,.skip-link,[data-motif-toggle]{display:none!important}
+  .js .reveal:not(.in){opacity:1!important;transform:none!important}
+  .sec-dark,.sec-dark *,.hero,.hero *,.snapshot,.snapshot *,footer,footer *{background-color:transparent!important;color:#111!important;border-color:#bbb!important}
+  .sec-white,.sec-tint,.sec-dark,footer{background-color:#fff!important;border-top:1px solid #bbb}
+  .btn{background:transparent!important;color:#111!important;border-color:#111!important}
+  .table-scroll{overflow:visible;background:#fff!important}
+  main>section{padding:28px 0}
+}
+/* forced colors: the UA repaints every band to Canvas, so bands get a system seam instead */
+@media (forced-colors:active){
+  .sec-white,.sec-tint,.sec-dark,footer{background-image:none;border-top:1px solid CanvasText}
+  .btn{border-color:ButtonText}
+  .nav-burger span{forced-color-adjust:none;background:CanvasText}
+  .table-scroll{border-color:CanvasText}
+}
+/* mc:nav (computed: the listing chip stops fitting beside logo + burger) */
+@media (max-width:407px){.nav-tick{display:none}}
+/* mc:component motion-extra */
+/* motion-extra: reveal direction variants for the substrate's single .reveal + --d observer. Band: either.
+   Integrity: they only set --reveal-from, so .in and reduced motion always win (no ordering trap); never a 2nd observer. */
+.reveal.from-left{--reveal-from:translateX(-28px)}
+.reveal.from-right{--reveal-from:translateX(28px)}
+.reveal.scale-up{--reveal-from:scale(.96) translateY(10px)}
+@media (max-width:760px){.reveal.from-left,.reveal.from-right{--reveal-from:translateY(20px)}}   /* no sideways entry on phones */
+/* mc:component counters */
+/* counters: fixed-width digits so a counting card never reflows. Band: either.
+   Integrity: count only a sourced figure whose text is already the final value. */
+[data-count]{font-variant-numeric:tabular-nums}
+/* mc:layer */
+/* Lite Strategy visible layer. Archetype: centered-spine (a narrow centred measure, symmetric, a literal 1px spine down the page centre that
+   starts at every band's top edge and ends in a slanted node above each section head; the dated record hangs entries off the same spine).
+   Type: IBM Plex Sans Condensed (display, uppercase like the logo wordmark) / IBM Plex Sans (reading text, tables) / IBM Plex Mono (labels and
+   dates only): the company's own faces. Strategy: committed on the real electric blue #3858e9; the real navy #17163e carries disclosures and the
+   footer; the logo's sky blue is the vessel's liquid. Hero: the logo symbol as a vessel filled to fair value as a share of cost basis.
+   Every animated class contains "motif". */
+:root{--on-blue:oklch(0.985 0.006 268);--rl:oklch(0.26 0.028 268 / .5);--rl-soft:oklch(0.26 0.028 268 / .22);--sky-d:oklch(0.66 0.125 240);--node:12px;--slant:-15deg;--gut:max(22px,calc((100vw - var(--wrap)) / 2))}
+.sec-dark{--rl:oklch(0.98 0.009 268 / .5);--rl-soft:oklch(0.98 0.009 268 / .2)}
+html{scroll-padding-top:84px}
+body{font-family:var(--sans);font-size:1.0625rem;line-height:1.62}
+h1,h2{font-family:var(--serif);font-weight:600;text-transform:uppercase;letter-spacing:.012em;line-height:.98;text-wrap:balance}
+h3{font-family:var(--sans);font-weight:600;letter-spacing:-.005em;line-height:1.25}
+p{text-wrap:pretty}
+p a,td a,dd a,.pull-src a,.stat-n a,.tl-s a,.fin-foot a,.gov-foot a,.fig-n a{white-space:nowrap;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--tint-2);color:var(--accent-ink);transition:color .2s var(--ease),text-decoration-color .2s var(--ease)}
+p a:hover,td a:hover{text-decoration-color:var(--accent)}
+.sec-dark p a,.sec-dark td a,.sec-dark dd a{color:var(--accent-lt);text-decoration-color:var(--line-d)}
+.disc p a,.term dd a{margin-right:.6em}
+.disc p a:last-child,.term dd a:last-child{margin-right:0}
+.fin-foot a+a,.gov-foot a+a{margin-left:.6em}
+.sec-blue p a,.sec-blue dd a,.hero p a,.hero figcaption a{color:#fff;text-decoration-color:oklch(1 0 0 / .55)}
+.sec-dark p a:hover{color:#fff}
+.sec-blue .eyebrow,.hero .eyebrow{color:var(--on-blue)}
+.sec-blue .eyebrow::before{background:var(--sky-lt)}
+.eyebrow{font-family:var(--mono);font-weight:500;letter-spacing:.12em}
+.note{font-size:.9rem;color:var(--text-mid);max-width:none}
+.sec-dark .note{color:oklch(0.86 0.02 268)}
+.btn{font-family:var(--sans);font-weight:600}
+
+/* ---------- nav: the real site's dark bar with the white wordmark; Contact IR takes the brand blue ---------- */
+.site-nav{background:var(--deep);border-bottom:1px solid var(--line-d)}
+.nav-logo img{height:30px;width:auto}
+.nav-links a:not(.btn){color:oklch(0.9 0.02 268);font-weight:500}
+.nav-links a:not(.btn):hover{color:#fff}
+.nav-links a.active{color:#fff;text-decoration-color:var(--sky)}
+.nav-tick{color:oklch(0.86 0.02 268);border-color:var(--line-d)}
+.nav-burger span{background:#fff}
+.site-nav .btn-primary{background:var(--accent);color:#fff}
+.site-nav .btn-primary:hover{background:#fff;color:var(--deep)}
+@media (max-width:900px){.nav-links{background:var(--deep);border-bottom:1px solid var(--line-d)}}
+
+/* ---------- the spine: a hairline from each band's top edge to a slanted node above the eyebrow, and a stub at each band's foot ---------- */
+main>section{position:relative}
+main>section::before,main>section::after{content:'';position:absolute;left:50%;width:1px;background:var(--rl);pointer-events:none;z-index:1}
+main>section::before{top:0;height:76px}
+main>section::after{bottom:0;height:34px}
+main>section.hero::before{display:none}
+.sec-head{text-align:center;max-width:780px;margin:0 auto clamp(36px,5vw,60px);display:grid;justify-items:center;gap:14px}
+.sec-head .eyebrow{display:flex;flex-direction:column;align-items:center;gap:12px;margin:0;font-size:.74rem}
+.sec-head .eyebrow::before,.hero .eyebrow::before{content:'';display:block;width:var(--node);height:var(--node);border-radius:0;background:var(--accent);transform:skewX(var(--slant))}
+.sec-dark .eyebrow::before{background:var(--sky)}
+.sec-head h2{font-size:clamp(2rem,4.8vw,3.7rem);max-width:19ch}
+.sec-head p:not(.eyebrow){max-width:62ch;margin:0;color:var(--text-mid);font-size:1.02rem}
+.sec-dark .sec-head p:not(.eyebrow){color:oklch(0.96 0.01 268)}
+.sec-head+*{margin-top:0}
+main>section:not(.hero){padding-top:calc(76px + 6px);padding-bottom:calc(clamp(64px,8vw,108px) + 20px)}
+.hero .eyebrow{display:flex;flex-direction:column;align-items:center;gap:12px;margin:0 auto 4px;max-width:none;color:var(--on-blue)}
+
+/* ---------- 00 hero ---------- */
+main>section.hero{padding:0}
+.hero-in{text-align:center;padding:clamp(56px,7vw,96px) 22px clamp(84px,9vw,124px)}
+.hero h1{font-size:clamp(2.7rem,7.6vw,6.4rem);font-weight:700;line-height:.93;letter-spacing:.006em;max-width:16ch;margin:20px auto 0}
+.hero h1 em{font-style:normal;color:var(--sky-lt)}
+.hero .hero-lede{max-width:64ch;margin:26px auto 0;font-size:clamp(1.04rem,1.45vw,1.18rem);color:var(--on-blue)}
+.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.hero-vessel{margin:clamp(44px,6vw,72px) auto 0;max-width:1000px}
+.vessel-stage{--vw:clamp(230px,34vw,400px);position:relative;display:grid;grid-template-columns:1fr var(--vw) 1fr;align-items:start}
+.vessel{display:block;width:var(--vw);height:auto;grid-column:2;overflow:visible}
+.v-ghost use{fill:oklch(1 0 0 / .13)}
+.v-edge use{fill:none;stroke:#fff;stroke-width:1.5;stroke-linejoin:round}
+.v-level{transform:translateY(var(--y))}
+.vessel .v-wave{transform:translateX(0)}
+.vessel-stage.in .motif-level{animation:motifDrain 3.4s var(--ease) 1}
+.motif-wave{animation:motifWave 7.5s linear infinite}
+@keyframes motifDrain{from{transform:translateY(var(--y0))}to{transform:translateY(var(--y))}}
+@keyframes motifWave{to{transform:translateX(-76px)}}
+#hero-motif.paused .motif-wave,#hero-motif.paused .motif-level{animation-play-state:paused}
+.v-tag{position:absolute;margin:0;padding-top:9px;width:calc((100% - var(--vw)) / 2 - 20px);border-top:1px solid oklch(1 0 0 / .75);display:grid;gap:2px;text-align:left}
+.v-cost{left:0;top:2.5%}
+.v-fv{right:0;top:57.3%;text-align:left}
+.v-k{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-blue)}
+.v-tag b{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,4.4vw,3.4rem);line-height:.95;letter-spacing:.005em;color:#fff;font-variant-numeric:tabular-nums}
+.v-n{font-size:.9rem;line-height:1.4;color:var(--on-blue)}
+.qvessels{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:780px;margin:clamp(36px,5vw,56px) auto 0;padding-top:26px;border-top:1px solid oklch(1 0 0 / .3)}
+.qv{display:grid;justify-items:center;gap:5px;text-align:center}
+.vessel-s{grid-column:auto;width:clamp(48px,7vw,78px);height:auto;margin-bottom:4px}
+.qv-p{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.qv-d{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--on-blue)}
+.qv-n{font-size:.82rem;color:var(--on-blue)}
+.qv-now .qv-p{color:var(--sky-lt)}
+.hero figcaption{max-width:70ch;margin:22px auto 0;font-size:.88rem;line-height:1.55;color:var(--on-blue)}
+.hero-asof{margin-top:30px;font-family:var(--mono);font-size:.68rem;line-height:1.6;letter-spacing:.04em;color:var(--on-blue);max-width:none}
+
+/* ---------- 01 holdings ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:3px solid var(--accent);border-bottom:1px solid var(--rl-soft);max-width:1040px;margin:0 auto}
+.stat{position:relative;text-align:center;padding:26px 18px 28px}
+.stat+.stat::before{content:'';position:absolute;left:0;top:14%;height:72%;width:1px;background:var(--rl-soft);transform:skewX(var(--slant))}
+.stat dt{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid);line-height:1.5;min-height:3em}
+.stat-v{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,3.8vw,3.3rem);line-height:1;letter-spacing:.004em;color:var(--accent-ink);margin:10px 0 12px;font-variant-numeric:tabular-nums}
+.stat-v small{font-family:var(--mono);font-size:.3em;font-weight:500;letter-spacing:.1em}
+.stat-n{font-size:.88rem;line-height:1.5;color:var(--text-mid)}
+.hold-tables{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:start;max-width:1040px;margin:40px auto 0}
+.fin-foot,.gov-foot{font-size:.9rem;color:var(--text-mid);max-width:78ch;margin:22px auto 0;text-align:center}
+
+/* ---------- 02 history: entries hang off the spine, alternating ---------- */
+.tl{list-style:none;position:relative;max-width:1000px;margin:0 auto;padding:0}
+.tl::before{content:'';position:absolute;left:50%;top:6px;bottom:0;width:1px;background:var(--rl)}
+.tl-i{position:relative;width:50%;padding:0 46px 38px 0}
+.tl-r{margin-left:50%;padding:0 0 38px 46px}
+.tl-i::after{content:'';position:absolute;top:7px;width:var(--node);height:var(--node);background:var(--accent);transform:skewX(var(--slant));right:calc(var(--node) / -2)}
+.tl-r::after{right:auto;left:calc(var(--node) / -2)}
+.tl-d{display:block;font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
+.tl-l .tl-d{text-align:right}
+.tl-l .tl-b{text-align:right}
+.tl-b h3{font-size:1.2rem}
+.tl-b p{margin-top:7px;font-size:.97rem;line-height:1.55}
+.tl-b p.tl-s{margin-top:9px;font-size:.84rem;font-family:var(--mono);letter-spacing:.015em}
+.tl-b p.tl-s{display:flex;flex-wrap:wrap;gap:2px .9em}
+.tl-l .tl-b p.tl-s{justify-content:flex-end}
+
+/* ---------- 03 treasury: ruled terms on the blue band ---------- */
+.terms{max-width:900px;margin:0 auto}
+.term{display:grid;grid-template-columns:190px minmax(0,1fr);gap:0 30px;padding:24px 0;border-top:1px solid var(--rl-soft)}
+.term:last-child{border-bottom:1px solid var(--rl-soft)}
+.term dt{font-family:var(--mono);font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--on-blue);padding-top:.25rem}
+.term dd{font-size:1.02rem;line-height:1.62;color:oklch(0.98 0.01 268)}
+.pull-c{max-width:780px;margin:clamp(40px,6vw,64px) auto 0;text-align:center}
+.pull-c p{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.14;color:#fff;max-width:none}
+.pull-c p.pull-src{margin-top:16px;font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.05em;line-height:1.5;color:var(--on-blue)}
+
+/* ---------- figures and bars ---------- */
+.figure{margin:0;padding:22px 24px 20px;border:1px solid var(--line);border-top:3px solid var(--accent);background:var(--card)}
+.fig-t{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--text-mid);margin-bottom:18px;line-height:1.55}
+.fig-n{margin-top:16px;font-size:.86rem;line-height:1.55;color:var(--text-mid);max-width:none}
+.bars{list-style:none;display:grid;gap:15px}
+.bars li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 14px;align-items:baseline;font-size:.92rem;line-height:1.35}
+.bars .b-l{grid-column:1;grid-row:1;color:var(--text)}
+.bars .b-v{grid-column:2;grid-row:1;font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.bars .b-bar{grid-column:1 / -1;grid-row:2;display:block;height:14px;background:var(--tint)}
+.bars .b-bar i{display:block;height:100%;width:var(--w);transform-origin:0 50%;transition:transform 1s var(--ease) .3s}
+.bars .b-neg{background:var(--accent)}
+.bars .b-pos{background:var(--sky-d)}
+.bars .b-total{margin-top:6px;padding-top:12px;border-top:2px solid var(--ink)}
+.bars .b-total .b-l{font-weight:700;color:var(--ink)}
+.js .figure.reveal:not(.in) .bars i{transform:scaleX(0)}
+.fin-figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-bottom:32px;align-items:start;max-width:1040px;margin-inline:auto}
+.fin-tables{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:22px;align-items:start;max-width:1040px;margin:0 auto}
+.cap-tables,.gov-tables{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start;max-width:1040px;margin:0 auto}
+.gov-tables{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.vote-wrap{max-width:1040px;margin:28px auto 0}
+
+/* ---------- tables ---------- */
+.table-scroll{background:var(--card);border-top:3px solid var(--accent)}
+table.fin{font-family:var(--sans)}
+table.fin.place,table.fin.series,table.fin.bridge,table.fin.pipe,table.fin.vote,table.fin.owners,table.fin.board,table.fin.results,table.fin.balance,table.fin.filings{min-width:0}
+table.fin thead th{font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--text-mid)}
+table.fin th[scope=row]{font-weight:500;color:var(--text)}
+table.fin td.num{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+table.fin tbody tr:last-child th{border-bottom:none}
+table.fin thead th:not(:first-child){text-align:right}
+table.fin.pipe thead th:not(:first-child),table.fin.board thead th:not(:first-child),table.fin.filings thead th:not(:first-child){text-align:left}
+table.fin.series td:last-child,table.fin.series thead th:last-child{text-align:left}
+table.fin.place tbody tr:last-child>*,table.fin.results tbody tr:last-child>*,table.fin.balance tbody tr:last-child>*,table.fin.bridge tbody tr:last-child>*,table.fin.owners tbody tr:last-child>*{border-top:2px solid var(--ink);font-weight:700;color:var(--ink)}
+table.fin.results tbody tr:nth-child(6)>*,table.fin.results tbody tr:nth-child(7)>*,table.fin.bridge tbody tr:nth-child(6)>*{font-weight:700;color:var(--ink)}
+table.fin.pipe th[scope=row],table.fin.board th[scope=row]{vertical-align:top;font-weight:700;color:var(--ink);width:26%}
+table.fin.pipe td,table.fin.board td{vertical-align:top;font-size:.95rem}
+table.fin.board td:last-child{white-space:nowrap}
+table.fin.filings td{vertical-align:top;font-size:.95rem}
+table.fin.filings td.num,table.fin.filings thead th{text-align:left}
+table.fin.filings th[scope=row]{vertical-align:top;font-weight:700;color:var(--ink);white-space:nowrap}
+
+/* ---------- 06 legacy: ruled rows ---------- */
+.legacy{list-style:none;max-width:860px;margin:0 auto;border-top:3px solid var(--accent)}
+.legacy li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:0 30px;padding:22px 0;border-bottom:1px solid var(--rl-soft)}
+.legacy h3{font-family:var(--serif);font-size:1.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.01em}
+.legacy p{font-size:1rem;line-height:1.6;max-width:none}
+.pharma .note{max-width:860px;margin:20px auto 0;text-align:left}
+
+/* ---------- 07 disclosures: the gravest band, one column on the spine ---------- */
+.disc{list-style:none;counter-reset:d;max-width:800px;margin:0 auto;border-top:1px solid var(--rl-soft)}
+.disc li{counter-increment:d;position:relative;padding:30px 0 34px 64px;border-bottom:1px solid var(--rl-soft)}
+.disc li::before{content:counter(d,decimal-leading-zero);position:absolute;left:0;top:34px;font-family:var(--mono);font-size:.85rem;font-weight:500;letter-spacing:.1em;color:var(--sky)}
+.disc h3{font-family:var(--serif);font-size:clamp(1.45rem,2.4vw,1.9rem);font-weight:600;text-transform:uppercase;letter-spacing:.012em;line-height:1.05;color:var(--paper)}
+.disc p{margin-top:12px;font-size:1.02rem;line-height:1.64;color:oklch(0.9 0.015 268);max-width:none}
+
+/* ---------- 08 to 10 ---------- */
+.alerts-line{max-width:760px;margin:26px auto 0;padding:16px 20px;border:1px solid var(--tint-2);background:var(--card);font-size:1rem;text-align:center}
+.alerts-line p{max-width:none}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;max-width:1040px;margin:0 auto 24px}
+.contact-col{padding-top:14px;border-top:3px solid var(--accent);min-width:0;text-align:center}
+.contact-col h3{margin-bottom:10px;font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid)}
+.contact-col a:not(.btn){color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.contact-col address{font-style:normal;line-height:1.55}
+.contact-col .btn{max-width:100%;overflow-wrap:anywhere}
+.contact .note{text-align:center;margin:0 auto}
+
+/* ---------- footer ---------- */
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid var(--line-d)}
+.footer-logo img{height:40px;width:auto}
+.footer-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 26px;max-width:640px}
+.footer-links a{font-size:.9rem;color:oklch(0.9 0.015 268);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-d);transition:color .2s var(--ease)}
+.footer-links a:hover{color:#fff;text-decoration-color:var(--sky)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .js .hero-in .reveal:not(.in){opacity:1;transform:none}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(odd)::before{display:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--rl-soft)}
+  .hold-tables,.fin-figs,.fin-tables,.cap-tables,.gov-tables{grid-template-columns:minmax(0,1fr)}
+  .term,.legacy li{grid-template-columns:minmax(0,1fr);gap:6px}
+  .tl::before{left:11px}
+  .tl-i,.tl-r{width:100%;margin-left:0;padding:0 0 34px 42px}
+  .tl-i::after,.tl-r::after{left:5px;right:auto}
+  .tl-l .tl-d,.tl-l .tl-b{text-align:left}
+  .tl-l .tl-b p.tl-s{justify-content:flex-start}
+}
+@media (max-width:720px){
+  .vessel-stage{grid-template-columns:minmax(0,1fr);justify-items:center;row-gap:20px}
+  .vessel{grid-column:1}
+  .v-tag{position:static;width:min(100%,360px);text-align:left}
+  .v-cost{order:2}
+  .v-fv{order:3}
+  .qvessels{gap:6px}
+  .qv-d{font-size:.6rem;letter-spacing:.03em}
+  .qv-n{font-size:.72rem}
+  .stats{grid-template-columns:minmax(0,1fr)}
+  .stat+.stat{border-top:1px solid var(--rl-soft)}
+  .stat+.stat::before{display:none}
+  .stat dt{min-height:0}
+  .disc li{padding-left:0;padding-top:58px}
+  .disc li::before{top:28px}
+  .fin-tables table.fin th,.fin-tables table.fin td,.cap-tables table.fin th,.cap-tables table.fin td,.hold-tables table.fin th,.hold-tables table.fin td{padding:10px 8px}
+  table.fin.results,table.fin.balance,table.fin.place,table.fin.bridge,table.fin.owners,table.fin.vote{font-size:.84rem}
+  table.fin td.num{font-size:.84rem}
+  table.fin.series,table.fin.vote{min-width:0}
+  table.fin.series thead,table.fin.vote thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.fin.series tbody tr,table.fin.vote tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:14px 16px;border-bottom:1px solid var(--line)}
+  table.fin.series tbody tr:last-child,table.fin.vote tbody tr:last-child{border-bottom:none}
+  table.fin.series th[scope=row],table.fin.vote th[scope=row]{grid-column:1 / -1;display:block;padding:0;border:none;font-weight:700;color:var(--ink)}
+  table.fin.series td,table.fin.vote td{display:block;padding:0;border:none;text-align:left;font-size:.9rem;white-space:normal}
+  table.fin.series td::before,table.fin.vote td::before{content:attr(data-l);display:block;font-family:var(--mono);font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mid);margin-bottom:2px}
+  table.fin.series td:last-child{grid-column:1 / -1}
+  table.fin.series td a{display:inline-flex;align-items:center;min-height:44px}
+  /* text tables stack on a phone: nothing scrolls sideways and nothing is clipped */
+  table.fin.board th[scope=row],table.fin.pipe th[scope=row]{width:auto}
+  table.fin.board,table.fin.filings,table.fin.pipe{min-width:0}
+  table.fin.board thead,table.fin.filings thead,table.fin.pipe thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.fin.board tbody tr,table.fin.filings tbody tr,table.fin.pipe tbody tr{display:block;padding:14px 16px;border-bottom:1px solid var(--line)}
+  table.fin.board tbody tr:last-child,table.fin.filings tbody tr:last-child,table.fin.pipe tbody tr:last-child{border-bottom:none}
+  table.fin.board th,table.fin.board td,table.fin.filings th,table.fin.filings td,table.fin.pipe th,table.fin.pipe td{display:block;width:auto;padding:0;border:none}
+  table.fin.board td,table.fin.pipe td{margin-top:5px}
+  table.fin.filings tbody tr{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px}
+  table.fin.filings td.num{grid-column:1;grid-row:1;font-size:.84rem}
+  table.fin.filings th[scope=row]{grid-column:2;grid-row:1}
+  table.fin.filings td:last-child{grid-column:1 / -1;grid-row:2;margin-top:4px}
+  table.fin.filings td a{display:flex;align-items:center;min-height:44px}
+  .bars li{gap:4px 10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .bars .b-bar i{transition:none}
+  .js .figure.reveal:not(.in) .bars i{transform:none}
+}
+@media print{
+  .js .figure.reveal:not(.in) .bars i{transform:none!important}
+  main>section::before,main>section::after,.tl::before{display:none!important}
+}
+
+/* ===================== design pass (panel synthesis) =====================
+   Base: lane C (condensed broadsheet): flush-left poster heads on alternating bands, a 1.5 type scale, unequal section padding, a stat ledger that
+   breaks the measure. Grafted: lane D (the fair-value stat and the pull quote as sky planes cut at the mark's lean, the dated record hung from a
+   navy pipe with sky date plates), lane A (the hero vessel dimensioned: cost basis and fair value as two measured lengths from a base datum).
+   Rejected: B's wave and glass at every seam, C's vertical head and sticky rail, D's wedge and slab on every head, A's zone letters and framed tables.
+   Every rule is decoration or scale: no text, figure, label or link changed. */
+:root{--f0:.75rem;--f2:1.6875rem;--f3:2.53rem;--d4:clamp(2.1rem,5.6vw,3.8rem);--d5:clamp(2.4rem,8.4vw,5.7rem);--d6:clamp(2.6rem,11vw,8rem)}
+.sec-head .eyebrow,.stat dt,.term dt,.fig-t,.tl-d,.contact-col h3,.pull-src{font-size:var(--f0)}
+.tl-b h3{font-size:var(--f2);line-height:1.05}
+
+/* the spine stays as an occasional axis: history, treasury, disclosures, contact */
+#holdings::before,#holdings::after,#financials::before,#financials::after,#capital::before,#capital::after,
+#pharma::before,#pharma::after,#governance::before,#governance::after,#news::before,#news::after{display:none}
+
+/* unequal section padding (ids beat main>section:not(.hero)) */
+#holdings{padding-top:clamp(64px,7vw,104px);padding-bottom:clamp(88px,11vw,150px)}
+#history{padding-top:calc(76px + 6px);padding-bottom:calc(clamp(72px,9vw,120px) + 20px)}
+#treasury{padding-top:calc(76px + 6px);padding-bottom:calc(clamp(72px,8vw,104px) + 20px)}
+#financials{padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(88px,11vw,150px)}
+#capital{padding-top:clamp(56px,6vw,80px);padding-bottom:clamp(72px,8vw,96px)}
+#pharma{padding-top:clamp(88px,10vw,140px);padding-bottom:clamp(56px,6vw,88px)}
+#governance{padding-top:clamp(64px,7vw,96px);padding-bottom:clamp(88px,10vw,120px)}
+#news{padding-top:clamp(48px,5vw,64px);padding-bottom:clamp(64px,7vw,80px)}
+
+/* flush-left broadsheet heads on six bands; history, treasury and contact keep the centred axis as posters */
+#holdings .sec-head,#financials .sec-head,#capital .sec-head,#pharma .sec-head,#governance .sec-head,#news .sec-head{
+  text-align:left;justify-items:start;max-width:none;margin:0 0 clamp(36px,5vw,72px);padding-top:16px;border-top:3px solid var(--ink)}
+#holdings .sec-head .eyebrow,#financials .sec-head .eyebrow,#capital .sec-head .eyebrow,#pharma .sec-head .eyebrow,#governance .sec-head .eyebrow,#news .sec-head .eyebrow{flex-direction:row;align-items:center;gap:10px}
+#holdings .sec-head h2,#financials .sec-head h2,#capital .sec-head h2,#pharma .sec-head h2,#governance .sec-head h2,#news .sec-head h2{
+  max-width:none;font-weight:700;line-height:.9;font-size:var(--d4);letter-spacing:.004em;word-spacing:.04em}
+#holdings .sec-head h2{font-size:var(--d6);line-height:.86}
+#pharma .sec-head h2{font-size:var(--d5)}
+#news .sec-head h2{font-size:var(--f3)}
+#history .sec-head{max-width:1040px}
+#history .sec-head h2{max-width:none;font-size:var(--d5);line-height:.88;font-weight:700}
+#contact .sec-head{max-width:1000px}
+#contact .sec-head h2{max-width:none;font-size:var(--d6);line-height:.86;font-weight:700}
+#treasury .sec-head h2{font-size:var(--d4);font-weight:700;color:var(--sky-lt)}
+@media (min-width:1021px){
+  #holdings .sec-head,#financials .sec-head,#capital .sec-head,#pharma .sec-head,#governance .sec-head,#news .sec-head{
+    display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);column-gap:clamp(28px,4vw,64px);row-gap:clamp(12px,1.6vw,20px);align-items:end}
+  #holdings .sec-head .eyebrow,#financials .sec-head .eyebrow,#capital .sec-head .eyebrow,#pharma .sec-head .eyebrow,#governance .sec-head .eyebrow,#news .sec-head .eyebrow{grid-column:1 / -1;grid-row:1}
+  #holdings .sec-head h2{grid-column:1 / -1;grid-row:2}
+  #holdings .sec-head p:not(.eyebrow){grid-column:2;grid-row:3;max-width:38ch}
+  #financials .sec-head h2,#capital .sec-head h2,#pharma .sec-head h2,#governance .sec-head h2,#news .sec-head h2{grid-column:1;grid-row:2}
+  #financials .sec-head p:not(.eyebrow),#capital .sec-head p:not(.eyebrow),#pharma .sec-head p:not(.eyebrow),#governance .sec-head p:not(.eyebrow),#news .sec-head p:not(.eyebrow){grid-column:2;grid-row:2;max-width:38ch}
+}
+.fin-foot,.gov-foot{text-align:left;max-width:1040px;margin:22px auto 0}
+
+/* holdings: the stat ledger breaks the measure; numerals are sized to their own column */
+#holdings .stats{max-width:none;width:min(1360px,calc(100vw - 44px));margin-left:calc(50% - min(680px,calc((100vw - 44px) / 2)));
+  border-top:1px solid var(--ink);border-bottom:3px solid var(--ink)}
+#holdings .stat{text-align:left;padding:clamp(22px,2.6vw,34px) clamp(18px,2.2vw,32px) clamp(26px,3vw,40px)}
+#holdings .stat+.stat::before{top:7%;height:62%;background:var(--rl)}
+#holdings .stat-v{font-size:clamp(2.4rem,4.6vw,4.6rem);line-height:.9;letter-spacing:-.006em;margin:6px 0 14px}
+#holdings .stat-v small{display:block;font-size:var(--f0);margin-top:.5rem}
+@supports (width:1cqw){#holdings .stat{container-type:inline-size}#holdings .stat-v{font-size:min(23cqw,5.2rem)}}
+
+/* sky planes (lane D): the fair-value stat in the vessel's own liquid colour, cut at the mark's lean; navy ink on sky is about 9.7:1 */
+#holdings .stat:nth-child(2){isolation:isolate}
+#holdings .stat:nth-child(2)::after{content:'';position:absolute;z-index:-1;inset:0 -8px;background:var(--sky);transform:skewX(var(--slant))}
+#holdings .stat:nth-child(2) dt,#holdings .stat:nth-child(2) .stat-v,#holdings .stat:nth-child(2) .stat-n{color:var(--deep);background:var(--sky)}
+#holdings .stat:nth-child(2)::before,#holdings .stat:nth-child(3)::before{display:none}
+.pull-c{position:relative;isolation:isolate;max-width:860px;margin:clamp(40px,6vw,64px) auto 0;text-align:left;padding:clamp(30px,4vw,52px) clamp(26px,6vw,84px)}
+.pull-c::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:-28px;right:calc((100% - 100vw) / 2 - 24px);background:var(--sky);transform:skewX(var(--slant));transform-origin:0 0}
+.sec-blue .pull-c p,.sec-blue .pull-c p.pull-src{color:var(--deep);background:var(--sky)}
+.sec-blue .pull-c p{font-size:clamp(1.6rem,3.4vw,2.7rem);font-weight:600;line-height:1.1}
+.sec-blue .pull-c p a{color:var(--deep);text-decoration-color:var(--deep)}
+
+/* the dated record hangs from a navy pipe; each date is a sky plate that reaches the pipe (lane D) */
+.tl{--arm:46px;--ext:calc(var(--arm) - 6px)}
+.tl::before{left:calc(50% - 7px);top:0;width:14px;background:var(--deep);clip-path:polygon(0 5px,100% 0,100% 100%,0 100%)}
+.tl-i::after{display:none}
+.tl-d{width:fit-content;line-height:1.2;background:var(--sky);color:var(--deep);clip-path:polygon(.7em 0,100% 0,calc(100% - .7em) 100%,0 100%)}
+.tl-l .tl-d{margin:0 calc(var(--ext) * -1) 10px auto;padding:.55em var(--ext) .55em 1.2em}
+.tl-r .tl-d{margin:0 auto 10px calc(var(--ext) * -1);padding:.55em 1.2em .55em var(--ext)}
+@media (max-width:1020px){
+  .tl{--arm:31px}
+  .tl::before{left:4px}
+  .tl-l .tl-d,.tl-r .tl-d{margin:0 auto 10px calc(var(--ext) * -1);padding:.55em 1.2em .55em var(--ext)}
+}
+
+/* the hero vessel, dimensioned (lane A): cost basis from the vessel's top to a base datum, fair value from the level line to the same datum;
+   2.5%, 57.3% and 97.5% are the mark's top, the fill level and the mark's base within the stage */
+.vessel-stage::after{content:'';position:absolute;left:0;right:0;top:97.5%;height:1px;background:oklch(1 0 0 / .5);pointer-events:none}
+.v-tag{align-content:start}
+.v-cost{height:95%}
+.v-fv{height:40.2%;padding-left:22px}
+.v-cost::before,.v-fv::before{content:'';position:absolute;top:-1px;height:1px;background:oklch(1 0 0 / .75)}
+.v-cost::before{left:100%;width:calc(var(--vw) * .29 + 20px)}
+.v-fv::before{right:100%;width:calc(var(--vw) * .06 + 20px)}
+.v-cost::after,.v-fv::after{content:'';position:absolute;top:-1px;bottom:0;width:7px;pointer-events:none}
+.v-cost::after{right:-3px}
+.v-fv::after{left:-3px}
+@supports (mask-image:linear-gradient(#000,#000)){
+  .v-cost::after,.v-fv::after{background:oklch(1 0 0 / .85);
+    -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='10'%3E%3Cpath d='M3.5 0 7 10H0Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='10'%3E%3Cpath d='M0 0h7L3.5 10Z'/%3E%3C/svg%3E"),linear-gradient(#000,#000);
+    mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='10'%3E%3Cpath d='M3.5 0 7 10H0Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='10'%3E%3Cpath d='M0 0h7L3.5 10Z'/%3E%3C/svg%3E"),linear-gradient(#000,#000);
+    -webkit-mask-size:7px 10px,7px 10px,1px 100%;mask-size:7px 10px,7px 10px,1px 100%;
+    -webkit-mask-position:0 0,0 100%,50% 0;mask-position:0 0,0 100%,50% 0;
+    -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+}
+.qvessels{border-top:2px solid oklch(1 0 0 / .8)}
+.qv{position:relative}
+.qv+.qv::before{content:'';position:absolute;left:-3px;top:8%;height:84%;width:1px;background:oklch(1 0 0 / .35);transform:skewX(var(--slant))}
+@media (max-width:720px){
+  .v-cost,.v-fv{height:auto}
+  .v-fv{padding-left:0}
+  .v-tag::before,.v-tag::after,.vessel-stage::after{display:none}
+}
+
+/* disclosures: hanging serif ordinals in the margin */
+@media (min-width:721px){
+  .disc{max-width:960px}
+  .disc li{padding-left:clamp(112px,12vw,150px)}
+  .disc li::before{font-family:var(--serif);font-weight:700;font-size:3.6rem;line-height:.8;letter-spacing:0;top:30px}
+}
+@media (max-width:720px){.disc li{padding-top:74px}.disc li::before{font-family:var(--serif);font-weight:700;font-size:2.4rem;line-height:.8;top:22px}}
+@media print{
+  #holdings .stat::after,.pull-c::before,.v-tag::before,.v-tag::after,.vessel-stage::after{display:none!important}
+  .tl-d{background:none!important;clip-path:none!important;padding:0!important;margin:0 0 6px!important}
+  .pull-c p,#holdings .stat-v{color:#111!important}
+}
+
+/* synthesis fixes: the comma of the big head clears the next line, the sky plane clears its neighbours, the quote's source line keeps its own size,
+   and the blocks under a flush-left head align with it */
+#holdings .sec-head h2{line-height:.95}
+#holdings .stat:nth-child(2)::after{inset:0 6px}
+@media (min-width:1021px){
+  #holdings .stat:nth-child(1){padding-right:clamp(40px,3.6vw,52px)}
+  #holdings .stat:nth-child(3){padding-left:clamp(40px,3.6vw,52px)}
+}
+.sec-blue .pull-c p.pull-src{font-size:.78rem;font-weight:500;line-height:1.5;margin-top:16px}
+.pull-c::before{right:calc((100% - 100vw) / 2 - 200px)}
+.hold-tables,.fin-figs,.fin-tables,.cap-tables,.gov-tables,.vote-wrap{max-width:none}
+.fin-foot,.gov-foot{max-width:92ch;margin:22px 0 0}
+.legacy{max-width:none;margin:0}
+.legacy p{max-width:72ch}
+.pharma .note{max-width:none;margin:20px 0 0}
+
+@media (max-width:1020px){
+  /* stacked: the sky plane is a plain flat block, not a skew that pokes out of its column */
+  #holdings .stat:nth-child(2){background:var(--sky);padding-left:20px;padding-right:20px}
+  #holdings .stat:nth-child(2)::after{display:none}
+  .pull-c::before{left:-22px;right:-22px;transform:none}
+  .pull-c{padding-left:6px;padding-right:6px}
+}
+/* mc:surface */
+/* Lite Strategy surface system. Derived from the logo: its symbol is two slanted shapes that lean about 15 degrees from vertical, so every stock
+   is ruled at that lean (a repeating gradient at 105deg draws "/" lines). Polarity flip (ir-build 5a): printed dark ruling on white stock, BLIND
+   WHITE ruling on the tinted stock, negative (white, very low alpha) ruling on the blue and navy bands. The gravest band (disclosures) gets its own
+   darkest stock: no ruling, no glow. Slots (--sheet-edge, --blind, --blind-k, --sheet-neg) come from tokens.css. The opaque head wash on white goes
+   LAST (bottom) so it cannot hide the trim hairlines. */
+:root{--blue-field:oklch(0.475 0.215 268);--hair:oklch(0.26 0.028 268 / 0.05);--trim:oklch(0.40 0.203 268 / 0.14)}
+
+/* white stock (holdings, financials, legacy, filings): printed dark ruling at the mark's lean plus two trim hairlines */
+.sec-white{
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--trim),var(--trim)),
+    linear-gradient(var(--trim),var(--trim)),
+    repeating-linear-gradient(105deg,transparent 0 19px,var(--hair) 19px 20px),
+    linear-gradient(to bottom,var(--tint) 0,var(--paper) 230px);
+  background-size:1px 100%,1px 100%,100% 100%,100% 100%;
+  background-position:11px 0,calc(100% - 11px) 0,0 0,0 0;
+  background-repeat:no-repeat;
+}
+
+/* tinted stock (history, capital, governance, contact): blind white ruling and white trims; white on a tint raises contrast (palette.mjs --check) */
+.sec-tint{
+  background-color:var(--tint);
+  background-image:
+    linear-gradient(var(--blind-k),var(--blind-k)),
+    linear-gradient(var(--blind-k),var(--blind-k)),
+    repeating-linear-gradient(105deg,transparent 0 23px,var(--blind-k) 23px 25px),
+    radial-gradient(70% 38% at 50% 0,oklch(0.99 0.008 268 / .7),transparent 72%);
+  background-size:1px 100%,1px 100%,100% 100%,100% 100%;
+  background-position:11px 0,calc(100% - 11px) 0,0 0,0 0;
+  background-repeat:no-repeat;
+}
+
+/* dark stock, default: faint negative ruling under a deep wash */
+.sec-dark{
+  background-color:var(--deep);
+  background-image:
+    repeating-linear-gradient(105deg,transparent 0 21px,var(--sheet-neg) 21px 22px),
+    linear-gradient(to bottom,oklch(0.285 0.08 var(--Hd)) 0,var(--deep) 360px);
+  background-size:100% 100%,100% 100%;
+  background-repeat:no-repeat;
+}
+
+/* the saturated blue bands (hero, treasury): the real #3858e9 as the field, a darker vignette at the edges and foot, negative ruling.
+   The field is the brand blue taken to L .475 so near-white text clears 6:1; nothing lightens it under text. */
+.sec-dark.sec-blue{
+  background-color:var(--blue-field);
+  background-image:
+    radial-gradient(110% 88% at 50% 40%,transparent 52%,oklch(0.30 0.13 274 / .55) 100%),
+    linear-gradient(to top,oklch(0.24 0.09 278 / .55) 0,transparent 150px),
+    linear-gradient(to bottom,oklch(0.28 0.11 276 / .45) 0,transparent 120px),
+    repeating-linear-gradient(105deg,transparent 0 21px,oklch(1 0 0 / .065) 21px 22px);
+  background-size:100% 100%,100% 100%,100% 100%,100% 100%;
+  background-repeat:no-repeat;
+}
+/* the hero: one soft lift behind the vessel only, kept clear of the callout text */
+#hero.sec-blue{
+  background-image:
+    radial-gradient(24% 20% at 50% 69%,oklch(0.55 0.18 264 / .30),transparent 72%),
+    radial-gradient(110% 88% at 50% 40%,transparent 52%,oklch(0.30 0.13 274 / .55) 100%),
+    linear-gradient(to top,oklch(0.24 0.09 278 / .55) 0,transparent 150px),
+    linear-gradient(to bottom,oklch(0.28 0.11 276 / .45) 0,transparent 120px),
+    repeating-linear-gradient(105deg,transparent 0 21px,oklch(1 0 0 / .065) 21px 22px);
+  background-size:100% 100%,100% 100%,100% 100%,100% 100%,100% 100%;
+}
+
+/* the gravest band: its own darkest stock, margin trims, no ruling, no chroma lift, no glow */
+#disclosures.sec-dark{
+  background-color:var(--deep-2);
+  background-image:
+    linear-gradient(var(--sheet-neg),var(--sheet-neg)),
+    linear-gradient(var(--sheet-neg),var(--sheet-neg)),
+    linear-gradient(to bottom,oklch(0.115 0.04 var(--Hd)) 0,transparent 220px);
+  background-size:1px 100%,1px 100%,100% 100%;
+  background-position:11px 0,calc(100% - 11px) 0,0 0;
+  background-repeat:no-repeat;
+}
+
+footer{
+  background-color:var(--deep-2);
+  background-image:
+    linear-gradient(var(--sheet-neg),var(--sheet-neg)),
+    linear-gradient(var(--sheet-neg),var(--sheet-neg)),
+    linear-gradient(to bottom,var(--deep) 0,var(--deep-2) 180px);
+  background-size:1px 100%,1px 100%,100% 100%;
+  background-position:11px 0,calc(100% - 11px) 0,0 0;
+  background-repeat:no-repeat;
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="concept-note">Independent design concept. Not affiliated with Lite Strategy, Inc. Official investor relations: <a href="https://investor.litestrategy.com/" target="_blank" rel="noopener">investor.litestrategy.com</a></div>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="#hero"><span class="nav-logo"><img src="img/litestrategy-logo.svg" alt="Lite Strategy" width="948" height="150"></span><span class="nav-tick">Nasdaq: LITS</span></a>
+    <nav aria-label="Primary">
+      <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#holdings">Holdings</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#treasury">Treasury</a></li>
+        <li><a href="#financials">Financials</a></li>
+        <li><a href="#capital">Capital</a></li>
+        <li><a href="#disclosures">Disclosures</a></li>
+        <li><a href="#governance">Governance</a></li>
+        <li><a class="btn btn-primary" href="#contact">Contact IR <span class="arw" aria-hidden="true">-&gt;</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<svg class="mk-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><path id="mk-a" d="M85.2178 88.1691L71.887 114.818C71.4215 115.762 70.4518 116.369 69.3915 116.369H26.658C17.3743 116.369 8.90513 111.637 4.00467 103.724C-0.88286 95.7978 -1.32248 86.1133 2.82804 77.7993L40.9715 1.53866C41.4499 0.594776 42.4196 0 43.4799 0H73.2705C75.3522 0 76.7099 2.18516 75.7789 4.04706L37.7648 80.0621C36.8339 81.924 38.1915 84.122 40.2733 84.122H82.7094C84.7912 84.122 86.1488 86.3072 85.2178 88.1691Z"/><path id="mk-b" d="M149.662 72.1878L111.505 148.448C111.04 149.392 110.07 150 108.997 150H79.2193C77.1376 150 75.7799 147.802 76.7109 145.94L114.725 69.925C115.656 68.0631 114.298 65.878 112.217 65.878H69.7804C67.6987 65.878 66.341 63.6799 67.272 61.818L70.039 56.2839L71.2156 53.9178L79.0383 38.2596L80.5769 35.1694C81.0553 34.2255 82.0251 33.6307 83.0853 33.6307H125.806C135.103 33.6307 143.572 38.3501 148.472 46.2633C153.36 54.1893 153.799 63.8738 149.649 72.1878H149.662Z"/><clipPath id="mk-clip"><use href="#mk-a"/><use href="#mk-b"/></clipPath><linearGradient id="mk-liquid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe6fd"/><stop offset="1" stop-color="#88cbf5"/></linearGradient></defs></svg>
+<!-- ============ 00 HERO: the logo's symbol as a vessel, filled to fair value as a share of cost basis ============ -->
+<section id="hero" class="hero sec-dark sec-blue" aria-labelledby="hero-h">
+  <div class="wrap hero-in">
+    <p class="eyebrow reveal">Lite Strategy, Inc. &middot; Nasdaq: LITS &middot; San Diego, California</p>
+    <h1 id="hero-h" class="reveal" style="--d:.06s">A Litecoin treasury, <em>measured against its cost</em></h1>
+    <p class="lead hero-lede reveal" style="--d:.14s">Lite Strategy, formerly MEI Pharma, holds Litecoin as its primary reserve asset and keeps a legacy cancer-drug portfolio. At June 30, 2026 it held 832,716 LTC, recorded at $34.9 million of fair value against $82.4 million of cost. It reported no revenue and a net loss of $71.2 million for fiscal 2026, most of it the fall in the fair value of its Litecoin.</p>
+    <div class="hero-cta reveal" style="--d:.22s">
+      <a class="btn btn-primary-light" href="#holdings">Read the holdings <span class="arw" aria-hidden="true">-&gt;</span></a>
+      <a class="btn btn-ghost-light" href="#disclosures">Material disclosures</a>
+    </div>
+    <figure class="hero-vessel" id="hero-motif">
+      <div class="vessel-stage reveal" style="--d:.2s">
+        <svg class="vessel" viewBox="-4 -4 160 158" aria-hidden="true" focusable="false"><g class="v-ghost"><use href="#mk-a"/><use href="#mk-b"/></g><g clip-path="url(#mk-clip)"><g class="v-level motif-level" style="--y:86.55px;--y0:0.95px"><path class="v-wave motif-wave" d="M -152 0 q 19 -2.4 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 L 380 220 L -152 220 Z" fill="url(#mk-liquid)"/></g></g><g class="v-edge"><use href="#mk-a"/><use href="#mk-b"/></g></svg>
+        <p class="v-tag v-cost"><span class="v-k">Cost basis</span><b>$82.4M</b><span class="v-n">cost basis as filed</span></p>
+        <p class="v-tag v-fv"><span class="v-k">Fair value</span><b>$34.9M</b><span class="v-n">recorded at Jun 30, 2026</span></p>
+      </div>
+      <ol class="qvessels" aria-label="The same mark at each quarter-end, filled to fair value as a share of that date's cost basis">
+        <li class="qv reveal" style="--d:0.00s"><svg class="vessel vessel-s" viewBox="-4 -4 160 158" aria-hidden="true" focusable="false"><g class="v-ghost"><use href="#mk-a"/><use href="#mk-b"/></g><g clip-path="url(#mk-clip)"><g class="v-level" style="--y:0.90px;--y0:0.90px"><path class="v-wave" d="M -152 0 q 19 -1.5 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 L 380 220 L -152 220 Z" fill="url(#mk-liquid)"/></g></g><g class="v-edge"><use href="#mk-a"/><use href="#mk-b"/></g></svg><b class="qv-p">99.4%</b><span class="qv-d">Sep 30, 2025</span><span class="qv-n">929,548 LTC</span></li>
+        <li class="qv reveal" style="--d:0.08s"><svg class="vessel vessel-s" viewBox="-4 -4 160 158" aria-hidden="true" focusable="false"><g class="v-ghost"><use href="#mk-a"/><use href="#mk-b"/></g><g clip-path="url(#mk-clip)"><g class="v-level" style="--y:40.65px;--y0:40.65px"><path class="v-wave" d="M -152 0 q 19 -1.5 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 L 380 220 L -152 220 Z" fill="url(#mk-liquid)"/></g></g><g class="v-edge"><use href="#mk-a"/><use href="#mk-b"/></g></svg><b class="qv-p">72.9%</b><span class="qv-d">Dec 31, 2025</span><span class="qv-n">929,548 LTC</span></li>
+        <li class="qv reveal" style="--d:0.16s"><svg class="vessel vessel-s" viewBox="-4 -4 160 158" aria-hidden="true" focusable="false"><g class="v-ghost"><use href="#mk-a"/><use href="#mk-b"/></g><g clip-path="url(#mk-clip)"><g class="v-level" style="--y:70.95px;--y0:70.95px"><path class="v-wave" d="M -152 0 q 19 -1.5 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 L 380 220 L -152 220 Z" fill="url(#mk-liquid)"/></g></g><g class="v-edge"><use href="#mk-a"/><use href="#mk-b"/></g></svg><b class="qv-p">52.7%</b><span class="qv-d">Mar 31, 2026</span><span class="qv-n">894,298 LTC</span></li>
+        <li class="qv qv-now reveal" style="--d:0.24s"><svg class="vessel vessel-s" viewBox="-4 -4 160 158" aria-hidden="true" focusable="false"><g class="v-ghost"><use href="#mk-a"/><use href="#mk-b"/></g><g clip-path="url(#mk-clip)"><g class="v-level" style="--y:86.55px;--y0:86.55px"><path class="v-wave" d="M -152 0 q 19 -1.5 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0 L 380 220 L -152 220 Z" fill="url(#mk-liquid)"/></g></g><g class="v-edge"><use href="#mk-a"/><use href="#mk-b"/></g></svg><b class="qv-p">42.3%</b><span class="qv-d">Jun 30, 2026</span><span class="qv-n">832,716 LTC</span></li>
+      </ol>
+      <figcaption>The mark is filled to the fair value of the Litecoin as a share of its cost basis: 42.3% at Jun 30, 2026 (derived, $34.9 million over $82.4 million). The four small marks do the same at each quarter-end against that date&rsquo;s cost basis as filed, which falls as Litecoin is sold or moved to GSR Markets as collateral, because the company re-bases Litecoin it transfers to its fair value on transfer. The wave is decoration. Sep 28, 2026, <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K</a></figcaption>
+    </figure>
+    <p class="hero-asof reveal" style="--d:.3s">Fiscal year ends June 30. Filings reviewed through the 10-K filed Sep 28, 2026. Amounts in US dollars. No share price and no live Litecoin price are shown.</p>
+  </div>
+</section>
+
+<!-- ============ 01 HOLDINGS: what it holds, as filed ============ -->
+<section id="holdings" class="holdings sec-white" aria-labelledby="hold-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Holdings</p>
+      <h2 id="hold-h">832,716 LTC, in two places</h2>
+      <p>Quantity, cost basis and fair value as filed. The 10-K calculates fair value &ldquo;by reference to the principal market price in accordance with U.S. GAAP&rdquo;. This page shows no live price.</p>
+    </div>
+    <dl class="stats">
+      <div class="stat reveal scale-up">
+        <dt>Litecoin held at Jun 30, 2026</dt>
+        <dd class="stat-v"><span data-count="832716" data-decimals="0">832,716</span> <small>LTC</small></dd>
+        <dd class="stat-n">650,716 held as digital assets and 182,000 held as digital assets receivable, pledged as collateral and residing with GSR. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></dd>
+      </div>
+      <div class="stat reveal scale-up" style="--d:.05s">
+        <dt>Fair value</dt>
+        <dd class="stat-v"><span data-count="34.9" data-prefix="$" data-suffix="M" data-decimals="1">$34.9M</span></dd>
+        <dd class="stat-n">Reported as $34,899 thousand. That implies about $41.91 per LTC (derived).</dd>
+      </div>
+      <div class="stat reveal scale-up" style="--d:.1s">
+        <dt>Cost basis</dt>
+        <dd class="stat-v"><span data-count="82.4" data-prefix="$" data-suffix="M" data-decimals="1">$82.4M</span></dd>
+        <dd class="stat-n">Reported as $82,413 thousand, about $98.97 per LTC (derived), a blend and not a purchase price: see the note below the tables. Fair value is $47.5 million below cost as filed (derived).</dd>
+      </div>
+      <div class="stat reveal scale-up" style="--d:.15s">
+        <dt>Cash at Jun 30, 2026</dt>
+        <dd class="stat-v"><span data-count="5.7" data-prefix="$" data-suffix="M" data-decimals="1">$5.7M</span></dd>
+        <dd class="stat-n">Total liabilities were $1,069 thousand and the balance sheet shows no borrowing. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></dd>
+      </div>
+    </dl>
+    <div class="hold-tables">
+      <div class="table-scroll reveal">
+        <table class="fin place">
+          <caption>Where the Litecoin sits, Jun 30, 2026 (USD thousands except quantity)</caption>
+          <thead><tr><th scope="col">Line</th><th scope="col">LTC</th><th scope="col">Cost basis</th><th scope="col">Fair value</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Digital assets</th><td class="num">650,716</td><td class="num">69,273</td><td class="num">27,272</td></tr>
+            <tr><th scope="row">Digital assets receivable, net (pledged as collateral, residing with GSR)</th><td class="num">182,000</td><td class="num">13,140</td><td class="num">7,627</td></tr>
+            <tr><th scope="row">Total digital assets</th><td class="num">832,716</td><td class="num">82,413</td><td class="num">34,899</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-scroll reveal" style="--d:.06s">
+        <table class="fin series">
+          <caption>Holdings at each quarter-end (USD thousands except quantity)</caption>
+          <thead><tr><th scope="col">Quarter-end</th><th scope="col">LTC</th><th scope="col">Cost basis</th><th scope="col">Fair value</th><th scope="col">Fair value as % of cost (derived)</th><th scope="col">Filing</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Sep 30, 2025</th><td class="num" data-l="LTC">929,548</td><td class="num" data-l="Cost basis">100,000</td><td class="num" data-l="Fair value">99,369</td><td class="num" data-l="Fair value as % of cost (derived)">99.4%</td><td data-l="Filing"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525283111/lits-20250930.htm" target="_blank" rel="noopener">10-Q, Nov 14, 2025</a></td></tr>
+            <tr><th scope="row">Dec 31, 2025</th><td class="num" data-l="LTC">929,548</td><td class="num" data-l="Cost basis">97,896</td><td class="num" data-l="Fair value">71,320</td><td class="num" data-l="Fair value as % of cost (derived)">72.9%</td><td data-l="Filing"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526053215/lits-20251231.htm" target="_blank" rel="noopener">10-Q, Feb 17, 2026</a></td></tr>
+            <tr><th scope="row">Mar 31, 2026</th><td class="num" data-l="LTC">894,298</td><td class="num" data-l="Cost basis">91,456</td><td class="num" data-l="Fair value">48,220</td><td class="num" data-l="Fair value as % of cost (derived)">52.7%</td><td data-l="Filing"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526220687/lits-20260331.htm" target="_blank" rel="noopener">10-Q, May 13, 2026</a></td></tr>
+            <tr><th scope="row">Jun 30, 2026</th><td class="num" data-l="LTC">832,716</td><td class="num" data-l="Cost basis">82,413</td><td class="num" data-l="Fair value">34,899</td><td class="num" data-l="Fair value as % of cost (derived)">42.3%</td><td data-l="Filing"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fin-foot reveal">Cost basis is as filed, and it is not the purchase price. The company reported buying 929,548 LTC at an average of $107.58 between July 30 and August 4, 2025 (<a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025102419/meip-20250805.htm" target="_blank" rel="noopener">8-K, Aug 5, 2025</a>), and it re-bases Litecoin it transfers to GSR Markets as collateral to fair value on transfer, so the cost of the Litecoin it holds falls when Litecoin is sold or moved. The Litecoin count fell by 96,832 (10.4%, derived) between Sep 30, 2025 and Jun 30, 2026; the cash flow statement shows $5,040 thousand of proceeds from sales of digital assets in fiscal 2026. The company&rsquo;s website says it will &ldquo;concentrate holdings per share as the ultimate metric of shareholder value&rdquo; (<a href="https://litestrategy.com/" target="_blank" rel="noopener">litestrategy.com</a>). On that measure: 0.0257 LTC per share at Jun 30, 2026 (derived: 832,716 LTC over 32,407 thousand shares outstanding, before any warrants).</p>
+  </div>
+</section>
+
+<!-- ============ 02 HISTORY: a spine of dated entries, with the filing beside each ============ -->
+<section id="history" class="history sec-tint" aria-labelledby="hist-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">History</p>
+      <h2 id="hist-h">From MEI Pharma to Lite Strategy</h2>
+      <p>Dated by the event, with the filing beside each entry. Where the entry is the company&rsquo;s own statement, it says so.</p>
+    </div>
+    <ol class="tl">
+      <li class="tl-i tl-l from-left reveal" style="--d:0.00s"><time class="tl-d" datetime="2024-07-22">Jul 22, 2024</time><div class="tl-b"><h3>The board opens a review of the old business</h3><p>The board announced it would evaluate strategic alternatives, including an orderly wind down if appropriate. A reduction in force began on August 1, 2024, and clinical development of voruciclib in oncology was discontinued.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+      <li class="tl-i tl-r from-right reveal" style="--d:0.03s"><time class="tl-d" datetime="2025-07-22">Jul 22, 2025</time><div class="tl-b"><h3>A $100.0 million private placement closes</h3><p>Signed July 17: 23,216,898 shares at $3.42 and pre-funded warrants for 6,022,869 shares at $3.4199. The placement agent, Titan, was paid a 7.0% cash fee. The same day the company signed an asset management agreement with GSR (1.75% a year of assets, paid in equity), an advisory agreement with Green Dragon (0.75% a year, paid in warrants) and a side letter that let GSR nominate a director. Charles B. Lee, the creator of Litecoin, joined the board.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+      <li class="tl-i tl-l from-left reveal" style="--d:0.06s"><time class="tl-d" datetime="2025-08-05">Aug 5, 2025</time><div class="tl-b"><h3>The first Litecoin purchases are announced</h3><p>The company said that between July 30 and August 4 it had bought 929,548 LTC at an average price of $107.58, putting all of the net proceeds of the placement into LTC tokens. Joshua Riezman, an employee of GSR, joined the board the same day under the side letter; director Steven D. Wood resigned.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025102419/meip-20250805.htm" target="_blank" rel="noopener">8-K, Aug 5, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025103990/meip-20250805.htm" target="_blank" rel="noopener">8-K, Aug 6, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+      <li class="tl-i tl-r from-right reveal" style="--d:0.00s"><time class="tl-d" datetime="2025-09-03">Sep 3, 2025</time><div class="tl-b"><h3>A borrowing framework with BitGo Prime</h3><p>A master loan agreement lets the company borrow digital assets or cash against collateral, with margin calls. The balance sheet at June 30, 2026 shows no borrowings.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000092963825003398/mei8k.htm" target="_blank" rel="noopener">8-K, Sep 4, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+      <li class="tl-i tl-l from-left reveal" style="--d:0.03s"><time class="tl-d" datetime="2025-09-10">Sep 10, 2025</time><div class="tl-b"><h3>MEI Pharma becomes Lite Strategy</h3><p>The company changed its name; its stock was to stop trading as MEIP and begin trading as LITS on Nasdaq on September 11.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000126210425000009/meip-20250910.htm" target="_blank" rel="noopener">8-K, Sep 10, 2025</a></p></div></li>
+      <li class="tl-i tl-r from-right reveal" style="--d:0.06s"><time class="tl-d" datetime="2025-10-29">Oct 29, 2025</time><div class="tl-b"><h3>A $25.0 million share repurchase program</h3><p>The board authorized repurchases of up to $25.0 million. Director Thomas C. Reynolds told the board on October 24 that he would resign effective November 4. The company began using the program in December 2025.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525258474/lits-20251024.htm" target="_blank" rel="noopener">8-K, Oct 30, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+      <li class="tl-i tl-l from-left reveal" style="--d:0.00s"><time class="tl-d" datetime="2025-11-14">Nov 14, 2025</time><div class="tl-b"><h3>Justin J. File becomes CEO</h3><p>He had been acting CEO since July 2024 and remains CFO and Secretary. A December employment agreement sets a base salary of $575,000 and a target bonus of 50% of salary.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525286424/lits-20251114.htm" target="_blank" rel="noopener">8-K, Nov 18, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525335761/lits-20251223.htm" target="_blank" rel="noopener">8-K, Dec 30, 2025</a></p></div></li>
+      <li class="tl-i tl-r from-right reveal" style="--d:0.03s"><time class="tl-d" datetime="2025-12-02">Dec 2, 2025</time><div class="tl-b"><h3>The auditor changes to CBIZ</h3><p>The audit committee dismissed Deloitte &amp; Touche and engaged CBIZ CPAs P.C. The 8-K says the change was not the result of any disagreement.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525309593/lits-20251202.htm" target="_blank" rel="noopener">8-K, Dec 5, 2025</a></p></div></li>
+      <li class="tl-i tl-l from-left reveal" style="--d:0.06s"><time class="tl-d" datetime="2026-02-12">Feb 12, 2026</time><div class="tl-b"><h3>The annual meeting</h3><p>Shareholders elected Mr. File and Mr. Riezman, approved the 2026 Omnibus Equity Compensation Plan and ratified CBIZ. The votes are in the Governance section.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526049005/lits-20260212.htm" target="_blank" rel="noopener">8-K, Feb 12, 2026</a></p></div></li>
+      <li class="tl-i tl-r from-right reveal" style="--d:0.00s"><time class="tl-d" datetime="2026-06-15">Jun 15, 2026</time><div class="tl-b"><h3>A $1.0 million SAFE in ZK Innovations</h3><p>An investment in a SAFE (simple agreement for future equity) in ZK Innovations, Inc., with a warrant to purchase tokens, carried at fair value using significant unobservable inputs.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+      <li class="tl-i tl-l from-left reveal" style="--d:0.03s"><time class="tl-d" datetime="2026-07-22">Jul 22, 2026</time><div class="tl-b"><h3>Second-year fees paid in warrants</h3><p>The company issued GSR pre-funded warrants for 1,322,349 shares and Green Dragon warrants for 566,721 shares, both at an exercise price of $0.0001.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+      <li class="tl-i tl-r from-right reveal" style="--d:0.06s"><time class="tl-d" datetime="2026-07-30">Jul 30, 2026</time><div class="tl-b"><h3>The company reports on its buybacks</h3><p>A press release says the company bought back about 4.9 million shares, 13% of those outstanding when the program began, at an average of $1.11, and held 819,070 LTC against 31,882,648 shares at July 17. These are the company&rsquo;s preliminary statements.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526325026/lits-20260730.htm" target="_blank" rel="noopener">8-K, Jul 30, 2026</a></p></div></li>
+      <li class="tl-i tl-l from-left reveal" style="--d:0.00s"><time class="tl-d" datetime="2026-09-28">Sep 28, 2026</time><div class="tl-b"><h3>The annual report for fiscal 2026</h3><p>The 10-K shows 832,716 LTC at June 30 and 30,407,268 shares outstanding at September 22, after a further 1,999,604 shares were repurchased from July 1 at $1.05.</p><p class="tl-s"><a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 03 TREASURY: how the Litecoin is run, on a saturated blue band ============ -->
+<section id="treasury" class="treasury sec-dark sec-blue" aria-labelledby="tre-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Treasury</p>
+      <h2 id="tre-h">How the Litecoin is run</h2>
+      <p class="lead">Terms as filed. Fees to the manager and the advisor are paid in equity, not cash.</p>
+    </div>
+    <dl class="terms">
+      <div class="term reveal">
+        <dt>Asset manager</dt>
+        <dd>GSR Strategies LLC manages the Litecoin under an asset management agreement dated July 22, 2025 and pursues &ldquo;a long-only investment strategy investing primarily in LiteCoin&rdquo;. It is paid 1.75% a year of assets under management in shares, or pre-funded warrants if it would exceed 4.99% of the stock, and received warrants over 1,461,989 shares at prices from $3.42 to $5.13. The fee for the first year was 546,348 pre-funded warrants, about $1.9 million. If the company ends the agreement before its ten-year term it &ldquo;may be obligated to pay an early termination fee&rdquo;: the present value of the remaining years multiplied by the average annual fee, paid in shares or pre-funded warrants. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></dd>
+      </div>
+      <div class="term reveal" style="--d:.04s">
+        <dt>Advisor</dt>
+        <dd>Green Dragon Investments LLC provides asset management services for 0.75% a year of the same assets, paid in warrants with an exercise price of $0.0001. Charles B. Lee, the creator of Litecoin, is a beneficiary of Green Dragon and a director of the company. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></dd>
+      </div>
+      <div class="term reveal" style="--d:.08s">
+        <dt>Covered calls</dt>
+        <dd>The company writes covered call options on part of its holdings under contracts with GSR Markets Ltd, an affiliate of GSR Strategies LLC; the strategies are &ldquo;designed to generate incremental liquidity and income while retaining exposure to the underlying digital assets&rdquo;. Net proceeds of written options were $853 thousand in fiscal 2026 and the gain on derivative liabilities was $813 thousand. In fiscal 2026 it issued options on $63.8 million of notional for $0.9 million of proceeds and transferred LTC equal to the notional to GSR Markets on a title-transfer basis: &ldquo;we no longer have control of the specific LTC transferred&rdquo;, but it keeps &ldquo;a contractual right to receive the same quantity of LTC if the Covered Call Options expire unexercised&rdquo;. The options can be exercised only on their expiration date and are exercised automatically if the reference price is above the strike. The risk is stated: the assets &ldquo;may be delivered to option counterparties if exercised&rdquo;. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></dd>
+      </div>
+      <div class="term reveal" style="--d:.12s">
+        <dt>Buybacks</dt>
+        <dd>A $25.0 million program announced on October 29, 2025. By June 30, 2026 the company had repurchased 4,378,525 shares at a weighted average of $1.12, with about $20.2 million of the program remaining, and a further 1,999,604 shares from July 1 to September 22 at $1.05. The 10-K says the company intends to fund them from covered-call proceeds or the sale of a portion of its LTC; the October 29, 2025 release said it intended to use &ldquo;available working capital&rdquo;. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525258474/lits-20251024.htm" target="_blank" rel="noopener">8-K, Oct 30, 2025</a></dd>
+      </div>
+      <div class="term reveal" style="--d:.16s">
+        <dt>Borrowing</dt>
+        <dd>A September 3, 2025 master loan agreement with BitGo Prime sets a framework for borrowing digital assets or cash against collateral, with margin calls. The June 30, 2026 balance sheet shows no borrowing. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000092963825003398/mei8k.htm" target="_blank" rel="noopener">8-K, Sep 4, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></dd>
+      </div>
+      <div class="term reveal" style="--d:.2s">
+        <dt>Other crypto activity</dt>
+        <dd>The 10-K describes &ldquo;an expanding strategy that could include the commencement of LTC mining or other crypto-focused operational activities&rdquo;. On June 15, 2026 the company invested $1,000 thousand in a SAFE and a token warrant from ZK Innovations, Inc., carried at fair value using significant unobservable inputs. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></dd>
+      </div>
+    </dl>
+    <blockquote class="pull-c reveal scale-up">
+      <p>&ldquo;We accumulate pure LTC through active treasury management and concentrate holdings per share as the ultimate metric of shareholder value.&rdquo;</p>
+      <p class="pull-src">The company&rsquo;s own words, <a href="https://litestrategy.com/" target="_blank" rel="noopener">litestrategy.com</a>. Not verified here.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ 04 FINANCIALS ============ -->
+<section id="financials" class="financials sec-white" aria-labelledby="fin-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Financials</p>
+      <h2 id="fin-h">Results, balance sheet and cash</h2>
+      <p>US dollars, in thousands as reported. Annual figures are audited, from the 10-K filed Sep 28, 2026. The company reported no revenue in fiscal 2025 or fiscal 2026.</p>
+    </div>
+    <div class="fin-figs">
+      <figure class="figure reveal">
+        <figcaption class="fig-t">Where the fiscal 2026 net loss came from, USD thousands</figcaption>
+        <ul class="bars" aria-label="Bars drawn to the reported values in USD thousands">
+          <li><span class="b-l">Change in fair value of digital assets</span><span class="b-bar"><i class="b-neg" style="--w:76.5%"></i></span><b class="b-v">54,408</b></li>
+          <li><span class="b-l">General and administrative</span><span class="b-bar"><i class="b-neg" style="--w:16.9%"></i></span><b class="b-v">12,047</b></li>
+          <li><span class="b-l">Change in fair value of digital assets receivable, net</span><span class="b-bar"><i class="b-neg" style="--w:7.9%"></i></span><b class="b-v">5,653</b></li>
+          <li><span class="b-l">Research and development</span><span class="b-bar"><i class="b-neg" style="--w:0.2%"></i></span><b class="b-v">122</b></li>
+          <li><span class="b-l">Gain on derivative liabilities, net</span><span class="b-bar"><i class="b-pos" style="--w:1.1%"></i></span><b class="b-v">+813</b></li>
+          <li><span class="b-l">Interest and dividend income</span><span class="b-bar"><i class="b-pos" style="--w:0.4%"></i></span><b class="b-v">+267</b></li>
+          <li class="b-total"><span class="b-l">Net loss</span><span class="b-bar"><i class="b-neg" style="--w:100%"></i></span><b class="b-v">71,150</b></li>
+        </ul>
+        <p class="fig-n">Bars are drawn to scale against the $71,150 thousand net loss. The two fair-value lines together ($54,408 thousand and $5,653 thousand) are about 84% of the loss (derived). The 10-K&rsquo;s roll-forward splits the first into $42,001 thousand unrealized, $5,421 thousand realized on Litecoin sold and $6,986 thousand realized on Litecoin moved to GSR Markets as collateral: losses against cost, not cash spent. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p>
+      </figure>
+      <figure class="figure reveal" style="--d:.08s">
+        <figcaption class="fig-t">Where the fiscal 2026 cash came from and went, USD thousands</figcaption>
+        <ul class="bars" aria-label="Bars drawn to the reported values in USD thousands">
+          <li><span class="b-l">Net proceeds of the July 2025 placement</span><span class="b-bar"><i class="b-pos" style="--w:80.2%"></i></span><b class="b-v">+92,190</b></li>
+          <li><span class="b-l">Sale of digital assets</span><span class="b-bar"><i class="b-pos" style="--w:4.4%"></i></span><b class="b-v">+5,040</b></li>
+          <li><span class="b-l">Net proceeds of the at-the-market program</span><span class="b-bar"><i class="b-pos" style="--w:4.0%"></i></span><b class="b-v">+4,628</b></li>
+          <li><span class="b-l">Net proceeds of covered call options</span><span class="b-bar"><i class="b-pos" style="--w:0.7%"></i></span><b class="b-v">+853</b></li>
+          <li><span class="b-l">Purchases of digital assets</span><span class="b-bar"><i class="b-neg" style="--w:86.9%"></i></span><b class="b-v">100,000</b></li>
+          <li><span class="b-l">Net cash used in operating activities</span><span class="b-bar"><i class="b-neg" style="--w:7.9%"></i></span><b class="b-v">9,121</b></li>
+          <li><span class="b-l">Repurchase of common stock</span><span class="b-bar"><i class="b-neg" style="--w:4.3%"></i></span><b class="b-v">4,895</b></li>
+          <li><span class="b-l">Purchase of the SAFE investment</span><span class="b-bar"><i class="b-neg" style="--w:0.9%"></i></span><b class="b-v">1,000</b></li>
+          <li class="b-total"><span class="b-l">Net change in cash</span><span class="b-bar"><i class="b-neg" style="--w:10.7%"></i></span><b class="b-v">(12,305)</b></li>
+        </ul>
+        <p class="fig-n">Sources of cash total $102,711 thousand and uses $115,016 thousand (derived sums of the lines shown). Bars are drawn to the larger total. Cash fell from $18,011 thousand to $5,706 thousand.</p>
+      </figure>
+    </div>
+    <div class="fin-tables">
+      <div class="table-scroll reveal">
+        <table class="fin results">
+          <caption>Results of operations (USD thousands)</caption>
+          <thead><tr><th scope="col">Line</th><th scope="col">FY2026</th><th scope="col">FY2025</th><th scope="col">FY2024 (MEI Pharma)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Revenue</th><td class="num">none</td><td class="num">none</td><td class="num">65,297</td></tr>
+            <tr><th scope="row">Research and development</th><td class="num">122</td><td class="num">3,923</td><td class="num">16,561</td></tr>
+            <tr><th scope="row">General and administrative</th><td class="num">12,047</td><td class="num">13,532</td><td class="num">23,295</td></tr>
+            <tr><th scope="row">Change in fair value of digital assets</th><td class="num">54,408</td><td class="num">none</td><td class="num">none</td></tr>
+            <tr><th scope="row">Impairment of long-lived assets</th><td class="num">none</td><td class="num">none</td><td class="num">10,899</td></tr>
+            <tr><th scope="row">Total operating expenses</th><td class="num">66,577</td><td class="num">17,455</td><td class="num">50,755</td></tr>
+            <tr><th scope="row">Operating (loss) income</th><td class="num">(66,577)</td><td class="num">(17,455)</td><td class="num">14,542</td></tr>
+            <tr><th scope="row">Total other (expense) income, net</th><td class="num">(4,573)</td><td class="num">1,510</td><td class="num">3,236</td></tr>
+            <tr><th scope="row">Net (loss) income</th><td class="num">(71,150)</td><td class="num">(15,945)</td><td class="num">17,778</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-scroll reveal" style="--d:.06s">
+        <table class="fin balance">
+          <caption>Balance sheet (USD thousands)</caption>
+          <thead><tr><th scope="col">Line</th><th scope="col">Jun 30, 2026</th><th scope="col">Jun 30, 2025</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Cash and cash equivalents</th><td class="num">5,706</td><td class="num">18,011</td></tr>
+            <tr><th scope="row">Digital assets</th><td class="num">27,272</td><td class="num">none</td></tr>
+            <tr><th scope="row">Digital assets receivable, net</th><td class="num">7,627</td><td class="num">none</td></tr>
+            <tr><th scope="row">Investments in SAFE and Token Warrants</th><td class="num">1,000</td><td class="num">none</td></tr>
+            <tr><th scope="row">Total assets</th><td class="num">42,692</td><td class="num">18,285</td></tr>
+            <tr><th scope="row">Total liabilities</th><td class="num">1,069</td><td class="num">1,354</td></tr>
+            <tr><th scope="row">Treasury stock, at cost</th><td class="num">(4,895)</td><td class="num">none</td></tr>
+            <tr><th scope="row">Accumulated deficit</th><td class="num">(475,314)</td><td class="num">(404,164)</td></tr>
+            <tr><th scope="row">Total stockholders&rsquo; equity</th><td class="num">41,623</td><td class="num">16,931</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fin-foot reveal">Net loss per share was $2.06 in fiscal 2026 on 34,559 thousand weighted-average shares and $2.39 in fiscal 2025 on 6,663 thousand. The FY2024 column is from the FY2025 10-K, when the company was MEI Pharma: the $65,297 thousand shown above was $64,545 thousand under collaboration agreements and $752 thousand from customers, and the company paid a $1.75 per share cash dividend that year. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525220421/lits-20250630.htm" target="_blank" rel="noopener">10-K, Sep 26, 2025</a> The fiscal 2026 loss includes $2,521 thousand of noncash asset management and advisory expense. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p>
+  </div>
+</section>
+
+<!-- ============ 05 CAPITAL: shares, warrants and the placement ============ -->
+<section id="capital" class="capital sec-tint" aria-labelledby="cap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Capital</p>
+      <h2 id="cap-h">Shares, warrants and the placement</h2>
+      <p>How the share count moved in fiscal 2026, and what has been issued or promised beyond it.</p>
+    </div>
+    <div class="cap-tables">
+      <div class="table-scroll reveal">
+        <table class="fin bridge">
+          <caption>Shares, Jun 30, 2025 to Jun 30, 2026 (thousands)</caption>
+          <thead><tr><th scope="col">Step</th><th scope="col">Shares</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Issued at Jun 30, 2025</th><td class="num">6,663</td></tr>
+            <tr><th scope="row">Placement shares sold at $3.42</th><td class="num">23,217</td></tr>
+            <tr><th scope="row">Pre-funded warrants exercised for cash</th><td class="num">2,084</td></tr>
+            <tr><th scope="row">Pre-funded warrants exercised without cash</th><td class="num">3,938</td></tr>
+            <tr><th scope="row">Sold through the at-the-market program</th><td class="num">883</td></tr>
+            <tr><th scope="row">Issued at Jun 30, 2026</th><td class="num">36,785</td></tr>
+            <tr><th scope="row">Held in treasury</th><td class="num">(4,379)</td></tr>
+            <tr><th scope="row">Outstanding at Jun 30, 2026</th><td class="num">32,407</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-scroll reveal" style="--d:.06s">
+        <table class="fin pipe">
+          <caption>The July 2025 private placement</caption>
+          <thead><tr><th scope="col">Term</th><th scope="col">As filed</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Gross proceeds</th><td>$100.0 million; $92,190 thousand net of offering costs per the cash flow statement</td></tr>
+            <tr><th scope="row">Shares</th><td>23,216,898 at $3.42</td></tr>
+            <tr><th scope="row">Pre-funded warrants</th><td>6,022,869 at $3.4199, exercisable at $0.0001</td></tr>
+            <tr><th scope="row">Placement agent</th><td>Titan Partners Group LLC: 7.0% cash fee, $150,000 of expenses, warrants over 1,169,591 shares at $4.10</td></tr>
+            <tr><th scope="row">Use of proceeds</th><td>Delivered to the asset manager to buy Litecoin; the cash flow statement shows $100,000 thousand of digital-asset purchases</td></tr>
+            <tr><th scope="row">Resale registration</th><td>The investors have a registration rights agreement for the shares and pre-funded warrant shares</td></tr>
+            <tr><th scope="row">Source</th><td><a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fin-foot reveal">Shares outstanding were 30,407,268 at Sep 22, 2026, about 1,999,732 fewer than at Jun 30, in line with the 1,999,604 shares repurchased in between (derived). Together, 6,378,129 shares were repurchased from December 2025 to September 22, 2026 (derived). Excluded from the fiscal 2026 loss per share as anti-dilutive: options over 1,731 thousand shares, advisory warrants over 3,070 thousand, Green Dragon warrants over 59 thousand and one other warrant over 103 thousand (4,963 thousand in all). At-the-market agreement: Titan, up to $100.0 million, 3.5% commission. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a></p>
+  </div>
+</section>
+
+<!-- ============ 06 THE LEGACY PHARMA PORTFOLIO ============ -->
+<section id="pharma" class="pharma sec-white" aria-labelledby="ph-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The legacy portfolio</p>
+      <h2 id="ph-h">What is left of MEI Pharma</h2>
+      <p>The 10-K describes the company as &ldquo;a pharmaceutical company that has historically developed novel and differentiated cancer therapies&rdquo;. Research and development was $122 thousand in fiscal 2026.</p>
+    </div>
+    <ul class="legacy">
+      <li class="reveal"><h3>Voruciclib</h3><p>An oral cyclin-dependent kinase 9 (CDK9) inhibitor. The 10-K says all voruciclib clinical trial activities were ceased in September 2024, after the July 2024 review; during fiscal 2026 the company began a pre-clinical program for it in non-oncologic diseases. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal" style="--d:.05s"><h3>Zandelisib</h3><p>An oral, once-daily, selective PI3K&delta; inhibitor that was being developed for indolent B-cell lymphomas. Development was discontinued in November 2022 after an FDA meeting; the 10-K says &ldquo;we are not conducting any clinical trial activities for zandelisib and are assessing potential out-licensing or sale related opportunities&rdquo;. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal" style="--d:.1s"><h3>ME-344</h3><p>An intravenous small-molecule mitochondrial inhibitor, sold in October 2024 to Aardvark Therapeutics, Inc., with potential future milestone payments of up to $62.0 million on prespecified development and commercialization targets. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+    </ul>
+    <p class="note reveal">The company says the pre-clinical work is for potential out-licensing or sale and that it may need more capital to continue it. It had 5 employees at June 30, 2026.</p>
+  </div>
+</section>
+
+<!-- ============ 07 MATERIAL DISCLOSURES: the gravest band, in the filed words ============ -->
+<section id="disclosures" class="disclosures sec-dark" aria-labelledby="disc-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Material disclosures</p>
+      <h2 id="disc-h">What a reader should know before relying on any figure above</h2>
+      <p class="lead">Taken from the company&rsquo;s own filings, with the filing beside each item.</p>
+    </div>
+    <ol class="disc">
+      <li class="reveal"><h3>One asset, and its fair value has fallen</h3>
+        <p>The 10-K says the price of Litecoin &ldquo;has been and will likely continue to be, highly volatile&rdquo; and that &ldquo;fluctuations in the price of LTC tokens could materially and adversely affect an investment in our stock&rdquo;. At June 30, 2026 the company&rsquo;s 832,716 LTC were recorded at $34,899 thousand against a cost basis of $82,413 thousand (derived: 42.3% of cost). The $54,408 thousand fall in the fair value of digital assets and a further $5,653 thousand on the digital assets receivable are in the fiscal 2026 loss. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>Cash is small, and digital assets count toward funding</h3>
+        <p>Cash was $5,706 thousand at June 30, 2026, down from $18,011 thousand at June 30, 2025, and operating activities used $9,121 thousand. On cash alone that is about 7.5 months of the fiscal 2026 rate (derived). Management says it believes &ldquo;our cash and digital assets balance will be sufficient to meet our obligations and fund operations for at least the next 12 months&rdquo;, and that the company may need capital to &ldquo;expand our Litecoin Treasury Strategy&rdquo; and to continue its pre-clinical programs. The 10-K says the company intends to fund buybacks from covered-call proceeds or the sale of a portion of its LTC. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>What the structure costs, and how it is paid</h3>
+        <p>The placement raised $100.0 million gross and $92,190 thousand net of all offering costs, which include a 7.0% cash fee and $150,000 of expenses to the placement agent. In all the company issued advisory warrants for 3,070,177 shares, valued at $16.2 million in paid-in capital: 1,169,591 to the placement agent at $4.10, 1,461,989 to GSR at $3.42 to $5.13 and 438,597 to Green Grass Ventures at $4.10 (derived: the three sum to the total). The asset manager, GSR, is paid 1.75% a year of assets under management and the advisor, Green Dragon, 0.75% (derived: 2.5% a year together), in shares, pre-funded warrants or warrants at an exercise price of $0.0001. The number issued is the dollar fee divided by the average VWAP of the common stock over 30 trading days, so a lower share price means more shares for the same dollar fee. For the first year the count was 546,348 pre-funded warrants for GSR and 234,149 warrants for Green Dragon; on July 22, 2026 it was 1,322,349 and 566,721. The 2026 count for GSR is about 2.4 times the 2025 count (derived). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>Dilution that is already issued or available</h3>
+        <p>Potentially dilutive shares excluded from the fiscal 2026 loss per share totalled 4,963 thousand: options over 1,731 thousand shares, advisory warrants over 3,070 thousand, Green Dragon warrants over 59 thousand and one other warrant over 103 thousand, about 15.3% of the 32,407 thousand shares outstanding (derived). The 10-K&rsquo;s own count at June 30, 2026 is 3,406,839 warrants at a weighted-average $3.90, 546,348 pre-funded warrants and 1,731,085 options: 5,684,272 in all, about 17.5% of shares outstanding (derived), before the 1,889,070 warrants issued on July 22, 2026, which would take the total to 7,573,342, about 24.9% of the shares outstanding at September 22 (derived). Authorized capital is 226,000 thousand common shares and 100 thousand blank-check preferred shares. Under an at-the-market agreement with Titan the company may sell up to $100.0 million of stock at a 3.5% commission; in fiscal 2026 it sold 883 thousand shares for $4,628 thousand net. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>The manager, the counterparty and a director are connected</h3>
+        <p>GSR Strategies LLC bought in the placement, manages the Litecoin under an agreement that runs ten years unless ended earlier (after the first year, on 90 days&rsquo; notice by GSR for any reason or by the company if its board decides to end the strategy) and, through its affiliate GSR Markets, is the counterparty on the covered call options. Its employee Joshua Riezman sits on the board under a side letter; in finding him independent the board &ldquo;considered the fact that Mr. Riezman was appointed to the Board pursuant to the July 2025 Side Letter&rdquo;. Charles B. Lee is a director, the creator of Litecoin and a Director of the Litecoin Foundation, and &ldquo;a beneficiary of Green Dragon&rdquo;, whose advisory agreement is paid in warrants; the 10-K says he &ldquo;has waived any compensation for his Board service&rdquo;. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a></p></li>
+      <li class="reveal"><h3>Litecoin transferred to a counterparty as collateral</h3>
+        <p>Digital assets receivable, net, of $7,627 thousand (182,000 LTC, cost $13,140 thousand, about 21.9% of the Litecoin held, derived) &ldquo;include LTC pledged as collateral, residing with GSR&rdquo;. The transfer is on a title-transfer basis: the company &ldquo;no longer ha[s] control of the specific LTC transferred&rdquo; and holds a contractual right to the same quantity back if the options expire unexercised. The covered-call strategy is &ldquo;subject to the risk that the assets may be delivered to option counterparties if exercised&rdquo;. The company says expected credit losses were immaterial. The 10-K&rsquo;s related-party note books the $7,627 thousand receivable, a $40 thousand covered-call liability and $110 thousand of prepaid expense as balances with &ldquo;affiliates of our Board&rdquo;, and $5,653 thousand of fair-value loss and $2,521 thousand of general and administrative expense in the year as related-party activity. The 2025 agreement names Coinbase and other wallet providers agreed by the company and GSR as custodians. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">8-K, Jul 22, 2025</a></p></li>
+      <li class="reveal"><h3>A borrowing framework exists, with nothing drawn</h3>
+        <p>The September 2025 master loan agreement with BitGo Prime lets the company borrow digital assets or cash. The 8-K says &ldquo;The collateral&rsquo;s required value is typically higher than the borrowed amount, subject to margin calls&rdquo; and that failure to maintain collateral can bring remedies &ldquo;including the right to liquidate pledged collateral&rdquo;. The 10-K says &ldquo;the MLA does not represent a loan commitment&rdquo; and that at June 30, 2026 &ldquo;we had not requested any loans&rdquo;. Total liabilities were $1,069 thousand, all payables and accrued liabilities. The company says its balance sheet &ldquo;continues to carry no debt&rdquo;. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000092963825003398/mei8k.htm" target="_blank" rel="noopener">8-K, Sep 4, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526325026/lits-20260730.htm" target="_blank" rel="noopener">8-K, Jul 30, 2026</a></p></li>
+      <li class="reveal"><h3>Regulatory risk that attaches to the asset</h3>
+        <p>Two of the 10-K&rsquo;s risk factors read: &ldquo;Regulatory change reclassifying Litecoin as a security could lead to our falling within the definition of &lsquo;investment company&rsquo; under the Investment Company Act of 1940&rdquo; and &ldquo;We are not subject to legal and regulatory obligations that apply to investment companies such as mutual funds and exchange-traded funds&rdquo;. On March 17, 2026 the SEC issued a Digital Asset Interpretation in which, the 10-K says, the SEC &ldquo;stated its view that Litecoin is not a &lsquo;security&rsquo;&rdquo; and identified it as a digital commodity, and the CFTC joined it. The 10-K adds that the interpretation &ldquo;is not binding&rdquo; and that if Litecoin were determined to be a security the company &ldquo;would take steps to reduce our holdings of Litecoin as a percentage of our total assets&rdquo;, which could mean selling at unattractive prices. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>A small team and a shrunken old business</h3>
+        <p>At June 30, 2026 the company had 5 employees. Justin J. File is chief executive officer, chief financial officer, secretary and a director. Research and development expense was $122 thousand in fiscal 2026 against $3,923 thousand in fiscal 2025. The 10-K describes the company as &ldquo;a pharmaceutical company that has historically developed novel and differentiated cancer therapies&rdquo; and says it has begun pre-clinical programs in non-oncologic indications for potential out-licensing or sale; it may need more capital to continue them. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>The auditor changed during the year</h3>
+        <p>The audit committee dismissed Deloitte &amp; Touche and engaged CBIZ CPAs P.C. on December 2, 2025. The 8-K says the change &ldquo;was not a result of any disagreement&rdquo; and that Deloitte&rsquo;s reports for fiscal 2025 and 2024 were not modified. Audit fees were $267,500 (CBIZ, fiscal 2026) and $579,711 (Deloitte, fiscal 2025). CBIZ&rsquo;s report includes an emphasis-of-matter paragraph headed &ldquo;Investment in Litecoin&rdquo; that points to the company&rsquo;s disclosure of its concentration in a volatile asset, and of custody, regulatory and legal-status risks. Management concluded that internal control over financial reporting was effective at June 30, 2026; the 10-K does not include an auditor attestation report on it. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525309593/lits-20251202.htm" target="_blank" rel="noopener">8-K, Dec 5, 2025</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>Listing and the share price</h3>
+        <p>The 10-K&rsquo;s risk factors say the company could be delisted if it fails to comply with Nasdaq&rsquo;s continued listing standards, including &ldquo;a minimum closing bid price of $1.00 per share&rdquo;. The company bought back 1,999,604 shares between July 1 and September 22, 2026 at a weighted average of $1.05. None of the 25 filings reviewed reports a Nasdaq deficiency notice. No live or delayed share quote is shown on this page. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>Tax losses may be limited after ownership changes</h3>
+        <p>The 10-K says the company&rsquo;s ability to use its net operating loss carryforwards &ldquo;may be substantially limited due to ownership changes that have occurred or that could occur in the future under Section 382&rdquo;. A Section 382 study through December 31, 2021 &ldquo;determined that two such ownership changes did occur&rdquo;, and &ldquo;We have not completed a Section 382 study through June 30, 2026&rdquo;, after the July 2025 placement of 23,216,898 shares. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a></p></li>
+      <li class="reveal"><h3>Statements that come from the company, not from filed data</h3>
+        <p>In its July 30, 2026 release the company calls itself &ldquo;the first U.S. public company to adopt Litecoin (LTC) as its primary treasury reserve asset&rdquo; and says it offers &ldquo;regulated, transparent and actively managed exposure to Litecoin that no ETF or passive vehicle can replicate&rdquo;; its website calls it &ldquo;the world&rsquo;s largest Litecoin Treasury Company&rdquo; (<a href="https://litestrategy.com/" target="_blank" rel="noopener">litestrategy.com</a>). In the July 30 release it says the discount of its stock to net asset value reached &ldquo;the low 40% range&rdquo; and has narrowed &ldquo;to below 25%&rdquo;. These are the company&rsquo;s own, preliminary or promotional statements. The company&rsquo;s website defines its treasury NAV per share so that it &ldquo;does not take into account or include the Company&rsquo;s indebtedness, if applicable, or the value or number outstanding of its warrants and prefunded warrants&rdquo;. This page does not use that metric and shows no live dashboard figure. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526325026/lits-20260730.htm" target="_blank" rel="noopener">8-K, Jul 30, 2026</a> <a href="https://litestrategy.com/" target="_blank" rel="noopener">litestrategy.com</a></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 08 GOVERNANCE AND CONTROL ============ -->
+<section id="governance" class="governance sec-tint" aria-labelledby="gov-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Governance</p>
+      <h2 id="gov-h">Board, ownership, votes and the auditor</h2>
+      <p>From the 10-K filed Sep 28, 2026 and the 8-K on the February 12, 2026 annual meeting. No portraits are used on this page.</p>
+    </div>
+    <div class="gov-tables">
+      <div class="table-scroll reveal">
+        <table class="fin board">
+          <caption>Directors</caption>
+          <thead><tr><th scope="col">Director</th><th scope="col">Role as filed</th><th scope="col">Term ends</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Frederick W. Driscoll</th><td>Chair since Jul 22, 2024; director since Feb 2018</td><td>Fiscal 2028 meeting</td></tr>
+            <tr><th scope="row">Justin J. File</th><td>Chief executive officer, chief financial officer, secretary and director</td><td>Fiscal 2029 meeting</td></tr>
+            <tr><th scope="row">Joshua Riezman</th><td>Director since Aug 5, 2025 under the GSR side letter; employed by GSR; the board finds him independent</td><td>Fiscal 2029 meeting</td></tr>
+            <tr><th scope="row">James Flynn</th><td>Director since Oct 2023; managing member of Nerium Capital LLC</td><td>Fiscal 2027 meeting</td></tr>
+            <tr><th scope="row">Charles B. Lee</th><td>Director since Jul 22, 2025; creator of Litecoin; Director of the Litecoin Foundation; a beneficiary of Green Dragon</td><td>Fiscal 2027 meeting</td></tr>
+            <tr><th scope="row">Nicholas R. Glover, Ph.D.</th><td>Director since Jun 2013</td><td>Fiscal 2028 meeting</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-scroll reveal" style="--d:.06s">
+        <table class="fin owners">
+          <caption>Beneficial ownership, Sep 22, 2026</caption>
+          <thead><tr><th scope="col">Holder</th><th scope="col">Shares</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Charles B. Lee</th><td class="num">292,397</td></tr>
+            <tr><th scope="row">Justin J. File</th><td class="num">277,196</td></tr>
+            <tr><th scope="row">James Flynn</th><td class="num">216,422</td></tr>
+            <tr><th scope="row">Frederick W. Driscoll</th><td class="num">101,916</td></tr>
+            <tr><th scope="row">Nicholas R. Glover, Ph.D.</th><td class="num">100,375</td></tr>
+            <tr><th scope="row">Joshua Riezman</th><td class="num">62,500</td></tr>
+            <tr><th scope="row">All 6 directors and officers (3.44%)</th><td class="num">1,050,806</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="gov-foot reveal">Percentages are of 30,407,268 shares outstanding plus options exercisable within 60 days; each holder is below 1%. The 10-K table lists no other holder, but the December 2025 proxy statement listed two holders above 5% at Dec 15, 2025: Alexander Schornstein with 4,365,472 shares (11.87%) and Citadel CEMF Investments Ltd with 3,673,291 (9.99%). The 10-K lists neither. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a> <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525337041/lits-20251230.htm" target="_blank" rel="noopener">DEF 14A, Dec 30, 2025</a></p>
+    <div class="table-scroll vote-wrap reveal">
+      <table class="fin vote">
+        <caption>Votes at the annual meeting, Feb 12, 2026 (19,437,130 of 36,785,397 shares represented)</caption>
+        <thead><tr><th scope="col">Proposal</th><th scope="col">For</th><th scope="col">Against or withheld</th><th scope="col">Abstain</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Elect Justin J. File (withheld)</th><td class="num" data-l="For">7,554,160</td><td class="num" data-l="Against or withheld">4,779,999</td><td class="num" data-l="Abstain">none</td></tr>
+          <tr><th scope="row">Elect Joshua Riezman (withheld)</th><td class="num" data-l="For">7,558,908</td><td class="num" data-l="Against or withheld">4,775,251</td><td class="num" data-l="Abstain">none</td></tr>
+          <tr><th scope="row">Advisory vote on executive pay</th><td class="num" data-l="For">6,006,580</td><td class="num" data-l="Against or withheld">5,538,689</td><td class="num" data-l="Abstain">788,890</td></tr>
+          <tr><th scope="row">Ratify CBIZ CPAs as auditor</th><td class="num" data-l="For">18,939,953</td><td class="num" data-l="Against or withheld">430,917</td><td class="num" data-l="Abstain">66,260</td></tr>
+          <tr><th scope="row">2026 Omnibus Equity Compensation Plan</th><td class="num" data-l="For">6,630,087</td><td class="num" data-l="Against or withheld">5,697,274</td><td class="num" data-l="Abstain">6,798</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="gov-foot reveal">There were 7,102,971 broker non-votes on the election, pay and plan proposals. All four proposals passed. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526049005/lits-20260212.htm" target="_blank" rel="noopener">8-K, Feb 12, 2026</a> Auditor: CBIZ CPAs P.C. (firm ID 199 in the 10-K) since December 2, 2025; Deloitte &amp; Touche LLP before. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">10-K, Sep 28, 2026</a> Chief executive pay: a base salary of $575,000 and a target bonus of 50% of salary, with 12 months of base salary as severance on a qualifying termination. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525335761/lits-20251223.htm" target="_blank" rel="noopener">8-K, Dec 30, 2025</a></p>
+  </div>
+</section>
+
+<!-- ============ 09 FILINGS AND NEWS, with investor alerts as a link ============ -->
+<section id="news" class="news sec-white" aria-labelledby="news-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Filings</p>
+      <h2 id="news-h">The filings behind this page</h2>
+      <p>Dates are EDGAR filing dates; event dates are in the descriptions. These are the 25 annual, quarterly, current-report and proxy filings read for this page, newest first; amendments and Section 16 filings are not included.</p>
+    </div>
+    <div class="table-scroll reveal">
+      <table class="fin filings">
+        <caption>SEC filings reviewed</caption>
+        <thead><tr><th scope="col">Filed</th><th scope="col">Form</th><th scope="col">What it reports</th></tr></thead>
+        <tbody>
+          <tr><td class="num">Sep 28, 2026</td><th scope="row">10-K</th><td>Annual report for fiscal 2026 (year ended Jun 30, 2026). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526405328/lits-20260630.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Jul 30, 2026</td><th scope="row">8-K</th><td>Press release on share repurchases and preliminary fiscal 2026 cash and liabilities (Jul 30, 2026). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526325026/lits-20260730.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Jul 24, 2026</td><th scope="row">8-K</th><td>Investor presentation furnished (Jul 24, 2026). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526316284/lits-20260724.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">May 13, 2026</td><th scope="row">8-K</th><td>Results for the quarter ended Mar 31, 2026 (May 13, 2026). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526220697/lits-20260513.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">May 13, 2026</td><th scope="row">10-Q</th><td>Quarterly report for the quarter ended Mar 31, 2026. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526220687/lits-20260331.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Feb 17, 2026</td><th scope="row">8-K</th><td>Results for the quarter ended Dec 31, 2025 (Feb 17, 2026). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526053243/lits-20260217.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Feb 17, 2026</td><th scope="row">10-Q</th><td>Quarterly report for the quarter ended Dec 31, 2025. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526053215/lits-20251231.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Feb 12, 2026</td><th scope="row">8-K</th><td>Annual meeting results and the 2026 Omnibus Equity Compensation Plan (Feb 12, 2026). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312526049005/lits-20260212.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Dec 30, 2025</td><th scope="row">DEF 14A</th><td>Proxy statement for the fiscal 2026 annual meeting. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525337041/lits-20251230.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Dec 30, 2025</td><th scope="row">8-K</th><td>Employment agreement with Justin J. File as chief executive officer (Dec 23, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525335761/lits-20251223.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Dec 5, 2025</td><th scope="row">8-K</th><td>Change of independent registered public accounting firm to CBIZ CPAs P.C. (Dec 2, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525309593/lits-20251202.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Nov 18, 2025</td><th scope="row">8-K</th><td>Justin J. File appointed chief executive officer (Nov 14, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525286424/lits-20251114.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Nov 14, 2025</td><th scope="row">10-Q</th><td>Quarterly report for the quarter ended Sep 30, 2025. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525283111/lits-20250930.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Oct 30, 2025</td><th scope="row">8-K</th><td>Share repurchase program and a director resignation (Oct 24 and 29, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525258474/lits-20251024.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Sep 26, 2025</td><th scope="row">10-K</th><td>Annual report for fiscal 2025 (year ended Jun 30, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525220421/lits-20250630.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Sep 15, 2025</td><th scope="row">8-K</th><td>Notice of shares issued on a cashless exercise of pre-funded warrants (Sep 10, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000119312525203520/lits-20250910.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Sep 10, 2025</td><th scope="row">8-K</th><td>Name change to Lite Strategy, Inc. and the new ticker (Sep 10, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000126210425000009/meip-20250910.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Sep 4, 2025</td><th scope="row">8-K</th><td>Master loan agreement with BitGo Prime (Sep 3, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000092963825003398/mei8k.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Aug 6, 2025</td><th scope="row">8-K</th><td>Director changes: Steven D. Wood resigns; Joshua Riezman joins (Aug 5, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025103990/meip-20250805.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Aug 5, 2025</td><th scope="row">8-K</th><td>Announcement of Litecoin purchases with the placement proceeds (Aug 5, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025102419/meip-20250805.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Jul 30, 2025</td><th scope="row">8-K</th><td>Notice of shares issued on a cash exercise of pre-funded warrants (Jul 24, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025100341/meip-20250724.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Jul 22, 2025</td><th scope="row">8-K</th><td>Placement closing, asset management, advisory and side letter agreements (Jul 22, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000114036125026773/ef20052363_8k.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">May 13, 2025</td><th scope="row">8-K</th><td>Results for the quarter ended Mar 31, 2025 (May 13, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025070298/meip-20250513.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">May 13, 2025</td><th scope="row">10-Q</th><td>Quarterly report for the quarter ended Mar 31, 2025. <a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025070276/meip-20250331.htm" target="_blank" rel="noopener">Open</a></td></tr>
+          <tr><td class="num">Mar 7, 2025</td><th scope="row">8-K</th><td>Amended employment agreement with Justin J. File (Mar 3, 2025). <a href="https://www.sec.gov/Archives/edgar/data/1262104/000095017025035544/meip-20250303.htm" target="_blank" rel="noopener">Open</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alerts-line reveal">
+      <p><b>Investor alerts.</b> The company&rsquo;s investor relations site is at <a href="https://investor.litestrategy.com/" target="_blank" rel="noopener">investor.litestrategy.com</a>. This concept page does not collect or store email addresses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 CONTACT ============ -->
+<section id="contact" class="contact sec-tint" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-h">Investor relations</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-col"><h3>Email</h3>
+        <a class="btn btn-primary" href="mailto:investor@litestrategy.com">investor@litestrategy.com <span class="arw" aria-hidden="true">-&gt;</span></a></div>
+      <div class="contact-col"><h3>Telephone</h3>
+        <a href="tel:+18583697100">(858) 369-7100</a></div>
+      <div class="contact-col"><h3>Headquarters</h3>
+        <address>Lite Strategy, Inc.<br>9920 Pacific Heights Blvd, Suite 150<br>San Diego, CA 92121</address></div>
+      <div class="contact-col"><h3>Investor page</h3>
+        <a href="https://investor.litestrategy.com/" target="_blank" rel="noopener">investor.litestrategy.com</a></div>
+      <div class="contact-col"><h3>Filings</h3>
+        <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001262104&amp;type=&amp;dateb=&amp;owner=include&amp;count=40" target="_blank" rel="noopener">SEC EDGAR, CIK 0001262104</a></div>
+    </div>
+    <p class="note reveal">The email, telephone and address are published on litestrategy.com and the address is on the 10-K cover.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="footer-logo" href="#hero"><img src="img/litestrategy-logo.svg" alt="Lite Strategy" width="253" height="40"></a>
+      <ul class="footer-links">
+        <li><a href="https://investor.litestrategy.com/" target="_blank" rel="noopener">Official investor relations page</a></li>
+        <li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001262104&amp;type=&amp;dateb=&amp;owner=include&amp;count=40" target="_blank" rel="noopener">SEC filings (EDGAR)</a></li>
+        <li><a href="https://litestrategy.com/" target="_blank" rel="noopener">litestrategy.com</a></li>
+        <li><a href="#history">Dated record</a></li>
+        <li><a href="#news">Filings reviewed</a></li>
+      </ul>
+    </div>
+    <p class="fls"><b>Sources and method:</b> Figures come from the company&rsquo;s annual report on Form 10-K for the year ended June 30, 2026 and its Form 10-K for the year ended June 30, 2025, its quarterly reports on Form 10-Q for the quarters ended September 30 and December 31, 2025 and March 31, 2026, its proxy statement and its Form 8-K reports through July 30, 2026, each linked beside the item. Amounts are in US dollars; financial tables are in thousands as reported and periods are labeled by their end date. Dates in the filings table are EDGAR filing dates. The company was MEI Pharma, Inc. until September 10, 2025. Derived numbers are labeled where they appear: fair value as a share of cost basis, Litecoin per share, the combined fee rate, the sums in the sources-and-uses bars, and the lengths of bars and the level of each vessel, which are drawn to the reported values. Statements about the company&rsquo;s strategy, its position and its net asset value come from the company&rsquo;s own releases and website and are not verified here. The logo and favicon are the company&rsquo;s own; the vessel is an original illustration built from the logo&rsquo;s symbol, and its wave is decoration. No portraits, share prices or live Litecoin prices are used.</p>
+    <p class="fls"><b>About this page:</b> This is an independent design concept and is not the official Lite Strategy investor relations website. It is not affiliated with, endorsed by, or maintained by Lite Strategy, Inc. Figures were assembled from public materials at a point in time and may be outdated; verify every figure against the company's official SEC filings. For official information, visit <a href="https://investor.litestrategy.com/">investor.litestrategy.com</a>.</p>
+    <p class="fls"><b>Forward-Looking Statements:</b> This website contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, including statements regarding the volatility of the price of Litecoin and the fair value of the company's digital assets, the company's ability to fund its operations and its Litecoin treasury strategy, dilution from warrants, pre-funded warrants and its at-the-market program, its reliance on and related-party relationships with its asset manager and advisor, counterparty and custody risk on digital assets held with others, possible regulatory reclassification of Litecoin and the company's status under the Investment Company Act of 1940, the continued listing of its common stock on Nasdaq, and the outcome of its legacy pharmaceutical programs. These statements involve known and unknown risks, uncertainties, and other factors that may cause actual results to differ materially from those expressed or implied. We undertake no obligation to update any forward-looking statements except as required by law. See the company's SEC filings, including its most recent 10-K and 10-Q, for a full discussion of risk factors.</p>
+    <p class="market-note">Market data, where shown, is delayed at least 15 minutes and provided for this concept only. Real-time quotes and official figures are available through the company's investor relations site and SEC filings. This concept page shows no live or delayed share quote.</p>
+  </div>
+</footer>
+
+<script>
+/* counters: hardened count-up for SOURCED figures only (new: only, D26; scaffold refuses it in ir: mode). Band: either.
+   Integrity: markup ships the REAL final string; JS animates 0 -> target and restores that string exactly. Runs BEFORE
+   motion.js: counts on mc:reveal of its nearest .reveal (a counter outside any .reveal is given .reveal); no 2nd observer. */
+(function(){
+  var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var sel='[data-count]';
+  [].forEach.call(document.querySelectorAll(sel),function(el){
+    el.__mcFinal=el.textContent;                                    /* authored string, captured once */
+    if(!el.closest('.reveal'))el.classList.add('reveal');           /* join the one reveal observer (motion.js runs next) */
+  });
+  function countUp(el){
+    if(el.__mcStarted)return; el.__mcStarted=true;                  /* never twice: a 2nd run would capture a mid-count string */
+    var target=parseFloat(el.dataset.count); if(!isFinite(target))return;
+    var dec=parseInt(el.dataset.decimals||'0',10)||0,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',
+        loc=el.dataset.locale||document.documentElement.lang||'en-US',fmt,
+        finalText=el.__mcFinal!=null?el.__mcFinal:el.textContent,dur=1400,t0=-1,done=false;  /* -1, not 0: a 0 timestamp is falsy */
+    try{fmt=new Intl.NumberFormat(loc,{minimumFractionDigits:dec,maximumFractionDigits:dec})}
+    catch(x){fmt=new Intl.NumberFormat('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec})}
+    function finish(){if(done)return;done=true;el.textContent=finalText}   /* the authored string always wins */
+    function frame(t){
+      if(done)return;
+      if(t0<0){t0=t;requestAnimationFrame(frame);return}                      /* frame 1 only reads the clock */
+      var p=Math.min((t-t0)/dur,1);
+      if(p>=1){finish();return}
+      el.textContent=pre+fmt.format((1-Math.pow(1-p,3))*target)+suf;
+      requestAnimationFrame(frame);
+    }
+    setTimeout(finish,dur+400);                                             /* rAF throttled or killed: the real value still lands */
+    requestAnimationFrame(frame);
+  }
+  document.addEventListener('mc:reveal',function(e){
+    if(reduce||(e.detail&&e.detail.reduced))return;                         /* reduced motion: the real value simply stays */
+    var t=e.target;if(!t||!t.querySelectorAll)return;
+    var list=[].slice.call(t.querySelectorAll(sel));
+    if(t.matches&&t.matches(sel))list.unshift(t);
+    list.forEach(function(el){if(el.closest('.reveal')===t)countUp(el)});  /* a nested .reveal counts on its own reveal */
+  });
+})();
+</script>
+<script>
+/* mediaconsole motion: inlined by scaffold.mjs at the end of body, identical on every page; never edit it.
+   Sets html.js, runs the ONE reveal observer (fires the mc:reveal hook), scroll-spy, hamburger aria, and the
+   #hero-motif .paused toggle (off-screen, hidden tab, [data-motif-toggle]). Null-guarded: a failure reveals everything. */
+(function(){
+  var d=document,root=d.documentElement;
+  root.classList.add('js');
+  var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var hasIO='IntersectionObserver' in window;
+  function fire(el,name,detail){
+    var ev;
+    try{ev=new CustomEvent(name,{bubbles:true,detail:detail})}
+    catch(x){ev=d.createEvent('CustomEvent');ev.initCustomEvent(name,true,false,detail)}
+    el.dispatchEvent(ev);
+  }
+  /* mc:reveal fires ONCE per .reveal element, bubbling, as .in lands; detail.reduced is true under reduced motion.
+     Components hook here (counters.js) instead of adding a second observer. */
+  function show(el){
+    if(el.classList.contains('in'))return;
+    el.classList.add('in');
+    fire(el,'mc:reveal',{reduced:reduce});
+  }
+  try{
+    var els=[].slice.call(d.querySelectorAll('.reveal'));
+    if(reduce||!hasIO){els.forEach(show)}
+    else{
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);show(e.target)}})},{threshold:.12});
+      els.forEach(function(el){io.observe(el)});
+    }
+  }catch(err){root.classList.remove('js');[].forEach.call(d.querySelectorAll('.reveal'),function(el){el.classList.add('in')})}
+  try{
+    var burger=d.querySelector('.nav-burger'),links=d.getElementById('nav-links'),nav=d.querySelector('.site-nav');
+    if(burger&&links){
+      var setOpen=function(o){links.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')};
+      burger.addEventListener('click',function(){setOpen(!links.classList.contains('open'))});
+      links.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a'))setOpen(false)});
+      d.addEventListener('keydown',function(e){if((e.key==='Escape'||e.key==='Esc')&&links.classList.contains('open')){setOpen(false);burger.focus()}});
+    }
+    if(nav){var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>8)};window.addEventListener('scroll',onScroll,{passive:true});onScroll()}
+  }catch(err){}
+  try{
+    var na=[].slice.call(d.querySelectorAll('.nav-links a[href^="#"]:not(.btn)'));
+    if(na.length&&hasIO){
+      var so=new IntersectionObserver(function(en){en.forEach(function(e){
+        if(!e.isIntersecting)return;var id='#'+e.target.id;
+        na.forEach(function(a){var on=a.getAttribute('href')===id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+      })},{rootMargin:'-40% 0px -55% 0px'});
+      na.forEach(function(a){var t=d.getElementById(a.getAttribute('href').slice(1));if(t)so.observe(t)});
+    }
+  }catch(err){}
+  /* hero motif pause: toggles .paused on #hero-motif (off-screen, hidden tab, or the user's [data-motif-toggle]).
+     The class is the whole contract: substrate CSS pauses every CSS animation inside it; JS motifs watch it (wave.js). */
+  try{
+    var motif=d.getElementById('hero-motif');
+    if(motif&&!reduce){
+      var hero=d.getElementById('hero')||motif,hv=true,user=false,tg=[].slice.call(d.querySelectorAll('[data-motif-toggle]'));
+      var sm=function(){var p=user||!hv||d.hidden;motif.classList.toggle('paused',p)};
+      if(hasIO)new IntersectionObserver(function(en){en.forEach(function(e){hv=e.isIntersecting});sm()},{threshold:0}).observe(hero);
+      d.addEventListener('visibilitychange',sm);
+      tg.forEach(function(b){
+        b.setAttribute('aria-pressed','false');
+        b.addEventListener('click',function(){user=!user;tg.forEach(function(t){t.setAttribute('aria-pressed',user?'true':'false')});sm()});
+      });
+    }
+  }catch(err){}
+})();
+</script>
+</body>
+</html>
